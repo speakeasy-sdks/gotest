@@ -9,6 +9,7 @@ import (
 	"io"
 	"net/http"
 	"testsdkcreation/pkg/models/operations"
+	"testsdkcreation/pkg/models/sdkerrors"
 	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/utils"
 )
@@ -79,6 +80,8 @@ func (s *cadillac) GetChargeTime(ctx context.Context, vehicleID string) (*operat
 			}
 
 			res.ChargeTime = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -141,6 +144,8 @@ func (s *cadillac) GetVoltage(ctx context.Context, vehicleID string) (*operation
 			}
 
 			res.ChargeVoltage = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

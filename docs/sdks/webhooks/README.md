@@ -30,8 +30,8 @@ import(
 	"context"
 	"log"
 	"testsdkcreation"
-	"testsdkcreation/pkg/models/operations"
 	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -96,6 +96,7 @@ import(
 	"context"
 	"log"
 	"testsdkcreation"
+	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/models/operations"
 )
 

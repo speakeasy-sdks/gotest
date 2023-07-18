@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"strings"
 	"testsdkcreation/pkg/models/operations"
+	"testsdkcreation/pkg/models/sdkerrors"
 	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/utils"
 )
@@ -73,6 +74,8 @@ func (s *user) GetInfo(ctx context.Context) (*operations.GetInfoResponse, error)
 			}
 
 			res.UserInfo = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

@@ -20,6 +20,7 @@ import(
 	"context"
 	"log"
 	"testsdkcreation"
+	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/models/operations"
 )
 
@@ -70,6 +71,7 @@ import(
 	"context"
 	"log"
 	"testsdkcreation"
+	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/models/operations"
 )
 

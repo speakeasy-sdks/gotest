@@ -9,6 +9,7 @@ import (
 	"io"
 	"net/http"
 	"testsdkcreation/pkg/models/operations"
+	"testsdkcreation/pkg/models/sdkerrors"
 	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/utils"
 )
@@ -98,6 +99,8 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 			}
 
 			res.SuccessResponse = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -171,6 +174,8 @@ func (s *webhooks) Unsubscribe(ctx context.Context, vehicleID string, webhookID 
 			}
 
 			res.SuccessResponse = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

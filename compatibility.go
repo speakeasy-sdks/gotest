@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"strings"
 	"testsdkcreation/pkg/models/operations"
+	"testsdkcreation/pkg/models/sdkerrors"
 	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/utils"
 )
@@ -115,6 +116,8 @@ func (s *compatibility) ListCompatibility(ctx context.Context, country *string, 
 			}
 
 			res.CompatibilityResponse = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

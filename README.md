@@ -10,6 +10,8 @@ go get github.com/speakeasy-sdks/gotest
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+
+
 ```go
 package main
 
@@ -17,6 +19,7 @@ import(
 	"context"
 	"log"
 	"testsdkcreation"
+	"testsdkcreation/pkg/models/shared"
 	"testsdkcreation/pkg/models/operations"
 )
 
