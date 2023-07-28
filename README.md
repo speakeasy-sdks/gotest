@@ -29,9 +29,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetLocation(ctx, "36ab27d0-fd9d-4455-823a-ce30af709ffc")
+    res, err := s.Vehicles.GetLocation(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }

@@ -37,9 +37,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "deserunt"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetAmmeter(ctx, "deserunt")
+    res, err := s.Tesla.GetAmmeter(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -88,9 +89,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "suscipit"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetChargeTime(ctx, "suscipit")
+    res, err := s.Tesla.GetChargeTime(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -139,9 +141,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "iure"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetCompass(ctx, "iure")
+    res, err := s.Tesla.GetCompass(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -190,9 +193,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    id := "magnam"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetExteriorTemperature(ctx, "magnam")
+    res, err := s.Tesla.GetExteriorTemperature(ctx, id)
     if err != nil {
         log.Fatal(err)
     }
@@ -241,9 +245,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    id := "debitis"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetInteriorTemperature(ctx, "debitis")
+    res, err := s.Tesla.GetInteriorTemperature(ctx, id)
     if err != nil {
         log.Fatal(err)
     }
@@ -292,9 +297,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "ipsa"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetSpeedometer(ctx, "ipsa")
+    res, err := s.Tesla.GetSpeedometer(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -343,9 +349,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "delectus"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetVoltage(ctx, "delectus")
+    res, err := s.Tesla.GetVoltage(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -394,9 +401,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "tempora"
 
     ctx := context.Background()
-    res, err := s.Tesla.GetWattmeter(ctx, "tempora")
+    res, err := s.Tesla.GetWattmeter(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -445,11 +453,13 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "suscipit"
+    chargeAmmeter := &shared.ChargeAmmeter{
+        Amperage: testsdkcreation.Float32(48),
+    }
 
     ctx := context.Background()
-    res, err := s.Tesla.SetAmmeter(ctx, "suscipit", &shared.ChargeAmmeter{
-        Amperage: testsdkcreation.Float32(48),
-    })
+    res, err := s.Tesla.SetAmmeter(ctx, vehicleID, chargeAmmeter)
     if err != nil {
         log.Fatal(err)
     }

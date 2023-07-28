@@ -30,9 +30,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "corrupti"
 
     ctx := context.Background()
-    res, err := s.Cadillac.GetChargeTime(ctx, "corrupti")
+    res, err := s.Cadillac.GetChargeTime(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -81,9 +82,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "provident"
 
     ctx := context.Background()
-    res, err := s.Cadillac.GetVoltage(ctx, "provident")
+    res, err := s.Cadillac.GetVoltage(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }

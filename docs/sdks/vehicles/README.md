@@ -42,14 +42,16 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "molestiae"
+    requestBody := []string{
+        "/odometer",
+        "/odometer",
+        "/odometer",
+        "/odometer",
+    }
 
     ctx := context.Background()
-    res, err := s.Vehicles.Batch(ctx, "molestiae", []string{
-        "/odometer",
-        "/odometer",
-        "/odometer",
-        "/odometer",
-    })
+    res, err := s.Vehicles.Batch(ctx, vehicleID, requestBody)
     if err != nil {
         log.Fatal(err)
     }
@@ -105,9 +107,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "placeat"
 
     ctx := context.Background()
-    res, err := s.Vehicles.Disconnect(ctx, "placeat")
+    res, err := s.Vehicles.Disconnect(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -169,9 +172,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "voluptatum"
 
     ctx := context.Background()
-    res, err := s.Vehicles.Get(ctx, "voluptatum")
+    res, err := s.Vehicles.Get(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -230,9 +234,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "iusto"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetEngineOil(ctx, "iusto")
+    res, err := s.Vehicles.GetEngineOil(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -293,9 +298,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "excepturi"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetFuelTank(ctx, "excepturi")
+    res, err := s.Vehicles.GetFuelTank(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -355,9 +361,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetLocation(ctx, "36ab27d0-fd9d-4455-823a-ce30af709ffc")
+    res, err := s.Vehicles.GetLocation(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -416,9 +423,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "nisi"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetOdometer(ctx, "nisi")
+    res, err := s.Vehicles.GetOdometer(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -484,9 +492,12 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "recusandae"
+    limit := 836079
+    offset := 71036
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetPermissions(ctx, "recusandae", 836079, 71036)
+    res, err := s.Vehicles.GetPermissions(ctx, vehicleID, limit, offset)
     if err != nil {
         log.Fatal(err)
     }
@@ -549,9 +560,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "quis"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetTirePressure(ctx, "quis")
+    res, err := s.Vehicles.GetTirePressure(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -600,9 +612,10 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "veritatis"
 
     ctx := context.Background()
-    res, err := s.Vehicles.GetVin(ctx, "veritatis")
+    res, err := s.Vehicles.GetVin(ctx, vehicleID)
     if err != nil {
         log.Fatal(err)
     }
@@ -668,9 +681,11 @@ func main() {
             BearerAuth: "",
         }),
     )
+    limit := 648172
+    offset := 20218
 
     ctx := context.Background()
-    res, err := s.Vehicles.ListVehicles(ctx, 648172, 20218)
+    res, err := s.Vehicles.ListVehicles(ctx, limit, offset)
     if err != nil {
         log.Fatal(err)
     }
@@ -730,11 +745,13 @@ func main() {
             BearerAuth: "",
         }),
     )
+    vehicleID := "ipsam"
+    securityAction := &shared.SecurityAction{
+        Action: shared.SecurityActionActionUnlock.ToPointer(),
+    }
 
     ctx := context.Background()
-    res, err := s.Vehicles.LockUnlock(ctx, "ipsam", &shared.SecurityAction{
-        Action: shared.SecurityActionActionUnlock.ToPointer(),
-    })
+    res, err := s.Vehicles.LockUnlock(ctx, vehicleID, securityAction)
     if err != nil {
         log.Fatal(err)
     }

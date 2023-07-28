@@ -10,14 +10,14 @@ type Location struct {
 
 func (o *Location) GetLatitude() float32 {
 	if o == nil {
-		return float32{}
+		return 0.0
 	}
 	return o.Latitude
 }
 
 func (o *Location) GetLongitude() float32 {
 	if o == nil {
-		return float32{}
+		return 0.0
 	}
 	return o.Longitude
 }

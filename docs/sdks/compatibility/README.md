@@ -64,9 +64,12 @@ func main() {
             BearerAuth: "",
         }),
     )
+    country := "{country}"
+    scope := "{scope}"
+    vin := "{vin}"
 
     ctx := context.Background()
-    res, err := s.Compatibility.ListCompatibility(ctx, "{country}", "{scope}", "{vin}")
+    res, err := s.Compatibility.ListCompatibility(ctx, country, scope, vin)
     if err != nil {
         log.Fatal(err)
     }
