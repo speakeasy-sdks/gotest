@@ -187,15 +187,6 @@ func CreateResponseBodySuccessResponse(successResponse SuccessResponse) Response
 func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 	var d *json.Decoder
 
-	location := new(Location)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&location); err == nil {
-		u.Location = location
-		u.Type = ResponseBodyTypeLocation
-		return nil
-	}
-
 	odometer := new(Odometer)
 	d = json.NewDecoder(bytes.NewReader(data))
 	d.DisallowUnknownFields()
@@ -205,39 +196,12 @@ func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	fuelTank := new(FuelTank)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&fuelTank); err == nil {
-		u.FuelTank = fuelTank
-		u.Type = ResponseBodyTypeFuelTank
-		return nil
-	}
-
-	tirePressure := new(TirePressure)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&tirePressure); err == nil {
-		u.TirePressure = tirePressure
-		u.Type = ResponseBodyTypeTirePressure
-		return nil
-	}
-
 	engineOil := new(EngineOil)
 	d = json.NewDecoder(bytes.NewReader(data))
 	d.DisallowUnknownFields()
 	if err := d.Decode(&engineOil); err == nil {
 		u.EngineOil = engineOil
 		u.Type = ResponseBodyTypeEngineOil
-		return nil
-	}
-
-	chargeStatus := new(ChargeStatus)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&chargeStatus); err == nil {
-		u.ChargeStatus = chargeStatus
-		u.Type = ResponseBodyTypeChargeStatus
 		return nil
 	}
 
@@ -268,30 +232,12 @@ func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	batteryLevel := new(BatteryLevel)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&batteryLevel); err == nil {
-		u.BatteryLevel = batteryLevel
-		u.Type = ResponseBodyTypeBatteryLevel
-		return nil
-	}
-
 	batteryCapacity := new(BatteryCapacity)
 	d = json.NewDecoder(bytes.NewReader(data))
 	d.DisallowUnknownFields()
 	if err := d.Decode(&batteryCapacity); err == nil {
 		u.BatteryCapacity = batteryCapacity
 		u.Type = ResponseBodyTypeBatteryCapacity
-		return nil
-	}
-
-	compatibilityResponse := new(CompatibilityResponse)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&compatibilityResponse); err == nil {
-		u.CompatibilityResponse = compatibilityResponse
-		u.Type = ResponseBodyTypeCompatibilityResponse
 		return nil
 	}
 
@@ -313,6 +259,33 @@ func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
+	location := new(Location)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&location); err == nil {
+		u.Location = location
+		u.Type = ResponseBodyTypeLocation
+		return nil
+	}
+
+	chargeStatus := new(ChargeStatus)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&chargeStatus); err == nil {
+		u.ChargeStatus = chargeStatus
+		u.Type = ResponseBodyTypeChargeStatus
+		return nil
+	}
+
+	batteryLevel := new(BatteryLevel)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&batteryLevel); err == nil {
+		u.BatteryLevel = batteryLevel
+		u.Type = ResponseBodyTypeBatteryLevel
+		return nil
+	}
+
 	successResponse := new(SuccessResponse)
 	d = json.NewDecoder(bytes.NewReader(data))
 	d.DisallowUnknownFields()
@@ -322,32 +295,43 @@ func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
+	fuelTank := new(FuelTank)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&fuelTank); err == nil {
+		u.FuelTank = fuelTank
+		u.Type = ResponseBodyTypeFuelTank
+		return nil
+	}
+
+	compatibilityResponse := new(CompatibilityResponse)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&compatibilityResponse); err == nil {
+		u.CompatibilityResponse = compatibilityResponse
+		u.Type = ResponseBodyTypeCompatibilityResponse
+		return nil
+	}
+
+	tirePressure := new(TirePressure)
+	d = json.NewDecoder(bytes.NewReader(data))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&tirePressure); err == nil {
+		u.TirePressure = tirePressure
+		u.Type = ResponseBodyTypeTirePressure
+		return nil
+	}
+
 	return errors.New("could not unmarshal into supported union types")
 }
 
 func (u ResponseBody) MarshalJSON() ([]byte, error) {
-	if u.Location != nil {
-		return json.Marshal(u.Location)
-	}
-
 	if u.Odometer != nil {
 		return json.Marshal(u.Odometer)
 	}
 
-	if u.FuelTank != nil {
-		return json.Marshal(u.FuelTank)
-	}
-
-	if u.TirePressure != nil {
-		return json.Marshal(u.TirePressure)
-	}
-
 	if u.EngineOil != nil {
 		return json.Marshal(u.EngineOil)
-	}
-
-	if u.ChargeStatus != nil {
-		return json.Marshal(u.ChargeStatus)
 	}
 
 	if u.ChargeLimit != nil {
@@ -362,16 +346,8 @@ func (u ResponseBody) MarshalJSON() ([]byte, error) {
 		return json.Marshal(u.ChargeVoltage)
 	}
 
-	if u.BatteryLevel != nil {
-		return json.Marshal(u.BatteryLevel)
-	}
-
 	if u.BatteryCapacity != nil {
 		return json.Marshal(u.BatteryCapacity)
-	}
-
-	if u.CompatibilityResponse != nil {
-		return json.Marshal(u.CompatibilityResponse)
 	}
 
 	if u.VinInfo != nil {
@@ -382,8 +358,32 @@ func (u ResponseBody) MarshalJSON() ([]byte, error) {
 		return json.Marshal(u.UserInfo)
 	}
 
+	if u.Location != nil {
+		return json.Marshal(u.Location)
+	}
+
+	if u.ChargeStatus != nil {
+		return json.Marshal(u.ChargeStatus)
+	}
+
+	if u.BatteryLevel != nil {
+		return json.Marshal(u.BatteryLevel)
+	}
+
 	if u.SuccessResponse != nil {
 		return json.Marshal(u.SuccessResponse)
+	}
+
+	if u.FuelTank != nil {
+		return json.Marshal(u.FuelTank)
+	}
+
+	if u.CompatibilityResponse != nil {
+		return json.Marshal(u.CompatibilityResponse)
+	}
+
+	if u.TirePressure != nil {
+		return json.Marshal(u.TirePressure)
 	}
 
 	return nil, nil

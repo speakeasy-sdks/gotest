@@ -64,13 +64,13 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 type Testsdkcreation struct {
 	Cadillac  *cadillac
 	Chevrolet *chevrolet
-	// Compatibility - Operations about compatibility
+	// Operations about compatibility
 	Compatibility *compatibility
-	// Evs - Operations about electric vehicles
+	// Operations about electric vehicles
 	Evs   *evs
 	Tesla *tesla
 	User  *user
-	// Vehicles - Operations about vehicles
+	// Operations about vehicles
 	Vehicles *vehicles
 	Webhooks *webhooks
 
@@ -128,8 +128,8 @@ func New(opts ...SDKOption) *Testsdkcreation {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.3.0",
-			GenVersion:        "2.89.1",
+			SDKVersion:        "1.4.0",
+			GenVersion:        "2.101.0",
 		},
 	}
 	for _, opt := range opts {

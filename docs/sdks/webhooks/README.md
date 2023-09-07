@@ -40,8 +40,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "repellendus"
-    webhookID := "sapiente"
+    vehicleID := "ipsam"
+    webhookID := "repellendus"
     webhookInfo := &shared.WebhookInfo{
         Vehicleid: testsdkcreation.String("dc6ea99e-57d1-4e41-b129-27e7eb58713e"),
         Webhookid: testsdkcreation.String("9b6ae692-60cc-4b3e-89d8-71e7549cf805"),
@@ -109,8 +109,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "quo"
-    webhookID := "odit"
+    vehicleID := "sapiente"
+    webhookID := "quo"
 
     ctx := context.Background()
     res, err := s.Webhooks.Unsubscribe(ctx, vehicleID, webhookID)

@@ -24,7 +24,7 @@ func newWebhooks(sdkConfig sdkConfiguration) *webhooks {
 	}
 }
 
-// Subscribe - Subscribe Webhook
+// Subscribe Webhook
 // __Description__
 //
 // Subscribe to a webhook for a vehicle.
@@ -107,7 +107,7 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 	return res, nil
 }
 
-// Unsubscribe - Unsubscribe Webhook
+// Unsubscribe Webhook
 // __Description__
 //
 // Delete a webhook for a vehicle.

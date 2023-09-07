@@ -45,9 +45,6 @@ func main() {
     vehicleID := "molestiae"
     requestBody := []string{
         "/odometer",
-        "/odometer",
-        "/odometer",
-        "/odometer",
     }
 
     ctx := context.Background()
@@ -107,7 +104,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "placeat"
+    vehicleID := "minus"
 
     ctx := context.Background()
     res, err := s.Vehicles.Disconnect(ctx, vehicleID)
@@ -172,7 +169,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "voluptatum"
+    vehicleID := "placeat"
 
     ctx := context.Background()
     res, err := s.Vehicles.Get(ctx, vehicleID)
@@ -234,7 +231,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "iusto"
+    vehicleID := "voluptatum"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetEngineOil(ctx, vehicleID)
@@ -298,7 +295,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "excepturi"
+    vehicleID := "iusto"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetFuelTank(ctx, vehicleID)
@@ -423,7 +420,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "nisi"
+    vehicleID := "excepturi"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetOdometer(ctx, vehicleID)
@@ -492,9 +489,9 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "recusandae"
-    limit := 836079
-    offset := 71036
+    vehicleID := "nisi"
+    limit := 925597
+    offset := 836079
 
     ctx := context.Background()
     res, err := s.Vehicles.GetPermissions(ctx, vehicleID, limit, offset)
@@ -560,7 +557,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "quis"
+    vehicleID := "ab"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetTirePressure(ctx, vehicleID)
@@ -612,7 +609,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "veritatis"
+    vehicleID := "quis"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetVin(ctx, vehicleID)
@@ -681,8 +678,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    limit := 648172
-    offset := 20218
+    limit := 87129
+    offset := 648172
 
     ctx := context.Background()
     res, err := s.Vehicles.ListVehicles(ctx, limit, offset)
@@ -745,7 +742,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "ipsam"
+    vehicleID := "perferendis"
     securityAction := &shared.SecurityAction{
         Action: shared.SecurityActionActionUnlock.ToPointer(),
     }
