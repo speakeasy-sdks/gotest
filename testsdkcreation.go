@@ -124,7 +124,7 @@ func WithSecurity(security shared.Security) SDKOption {
 }
 
 func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
-	return func(sdk *SDK) {
+	return func(sdk *Testsdkcreation) {
 		sdk.sdkConfiguration.RetryConfig = &retryConfig
 	}
 }
@@ -135,8 +135,8 @@ func New(opts ...SDKOption) *Testsdkcreation {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.5.0",
-			GenVersion:        "2.107.0",
+			SDKVersion:        "1.6.0",
+			GenVersion:        "2.118.1",
 		},
 	}
 	for _, opt := range opts {

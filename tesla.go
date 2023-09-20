@@ -74,12 +74,12 @@ func (s *tesla) GetAmmeter(ctx context.Context, vehicleID string) (*operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.ChargeAmmeter
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.ChargeAmmeter
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ChargeAmmeter = out
+			res.ChargeAmmeter = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -138,12 +138,12 @@ func (s *tesla) GetChargeTime(ctx context.Context, vehicleID string) (*operation
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.ChargeTime
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.ChargeTime
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ChargeTime = out
+			res.ChargeTime = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -202,12 +202,12 @@ func (s *tesla) GetCompass(ctx context.Context, vehicleID string) (*operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.Compass
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.Compass
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.Compass = out
+			res.Compass = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -266,12 +266,12 @@ func (s *tesla) GetExteriorTemperature(ctx context.Context, id string) (*operati
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.Temperature
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.Temperature
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.Temperature = out
+			res.Temperature = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -330,12 +330,12 @@ func (s *tesla) GetInteriorTemperature(ctx context.Context, id string) (*operati
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.Temperature
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.Temperature
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.Temperature = out
+			res.Temperature = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -394,12 +394,12 @@ func (s *tesla) GetSpeedometer(ctx context.Context, vehicleID string) (*operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.Speed
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.Speed
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.Speed = out
+			res.Speed = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -458,12 +458,12 @@ func (s *tesla) GetVoltage(ctx context.Context, vehicleID string) (*operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.ChargeVoltage
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.ChargeVoltage
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ChargeVoltage = out
+			res.ChargeVoltage = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -522,12 +522,12 @@ func (s *tesla) GetWattmeter(ctx context.Context, vehicleID string) (*operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.ChargeWattage
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.ChargeWattage
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ChargeWattage = out
+			res.ChargeWattage = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -552,7 +552,7 @@ func (s *tesla) SetAmmeter(ctx context.Context, vehicleID string, chargeAmmeter 
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "ChargeAmmeter", "json")
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "ChargeAmmeter", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -594,12 +594,12 @@ func (s *tesla) SetAmmeter(ctx context.Context, vehicleID string, chargeAmmeter 
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.SuccessResponse
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.SuccessResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.SuccessResponse = out
+			res.SuccessResponse = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

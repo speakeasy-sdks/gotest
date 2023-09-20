@@ -51,7 +51,7 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "WebhookInfo", "json")
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "WebhookInfo", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -93,12 +93,12 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.SuccessResponse
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.SuccessResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.SuccessResponse = out
+			res.SuccessResponse = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -168,12 +168,12 @@ func (s *webhooks) Unsubscribe(ctx context.Context, vehicleID string, webhookID 
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.SuccessResponse
-			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
+			var out shared.SuccessResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.SuccessResponse = out
+			res.SuccessResponse = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
