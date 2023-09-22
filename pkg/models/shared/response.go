@@ -295,12 +295,28 @@ func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 }
 
 func (u ResponseBody) MarshalJSON() ([]byte, error) {
+	if u.Location != nil {
+		return utils.MarshalJSON(u.Location, "", true)
+	}
+
 	if u.Odometer != nil {
 		return utils.MarshalJSON(u.Odometer, "", true)
 	}
 
+	if u.FuelTank != nil {
+		return utils.MarshalJSON(u.FuelTank, "", true)
+	}
+
+	if u.TirePressure != nil {
+		return utils.MarshalJSON(u.TirePressure, "", true)
+	}
+
 	if u.EngineOil != nil {
 		return utils.MarshalJSON(u.EngineOil, "", true)
+	}
+
+	if u.ChargeStatus != nil {
+		return utils.MarshalJSON(u.ChargeStatus, "", true)
 	}
 
 	if u.ChargeLimit != nil {
@@ -315,8 +331,16 @@ func (u ResponseBody) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.ChargeVoltage, "", true)
 	}
 
+	if u.BatteryLevel != nil {
+		return utils.MarshalJSON(u.BatteryLevel, "", true)
+	}
+
 	if u.BatteryCapacity != nil {
 		return utils.MarshalJSON(u.BatteryCapacity, "", true)
+	}
+
+	if u.CompatibilityResponse != nil {
+		return utils.MarshalJSON(u.CompatibilityResponse, "", true)
 	}
 
 	if u.VinInfo != nil {
@@ -327,32 +351,8 @@ func (u ResponseBody) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.UserInfo, "", true)
 	}
 
-	if u.Location != nil {
-		return utils.MarshalJSON(u.Location, "", true)
-	}
-
-	if u.ChargeStatus != nil {
-		return utils.MarshalJSON(u.ChargeStatus, "", true)
-	}
-
-	if u.BatteryLevel != nil {
-		return utils.MarshalJSON(u.BatteryLevel, "", true)
-	}
-
 	if u.SuccessResponse != nil {
 		return utils.MarshalJSON(u.SuccessResponse, "", true)
-	}
-
-	if u.FuelTank != nil {
-		return utils.MarshalJSON(u.FuelTank, "", true)
-	}
-
-	if u.CompatibilityResponse != nil {
-		return utils.MarshalJSON(u.CompatibilityResponse, "", true)
-	}
-
-	if u.TirePressure != nil {
-		return utils.MarshalJSON(u.TirePressure, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type: all fields are null")
