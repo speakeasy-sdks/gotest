@@ -1,4 +1,5 @@
 # Evs
+(*Evs*)
 
 ## Overview
 
@@ -48,7 +49,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "unde"
+    vehicleID := "Crew"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryCapacity(ctx, vehicleID)
@@ -111,7 +112,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "nulla"
+    vehicleID := "Movies"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryLevel(ctx, vehicleID)
@@ -163,7 +164,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "corrupti"
+    vehicleID := "vertical"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingLimit(ctx, vehicleID)
@@ -226,7 +227,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "illum"
+    vehicleID := "Health"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingStatus(ctx, vehicleID)
@@ -278,7 +279,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "vel"
+    vehicleID := "dynamic"
     chargeLimit := &shared.ChargeLimit{
         Limit: testsdkcreation.Float32(1),
     }
@@ -345,7 +346,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "error"
+    vehicleID := "beside"
     chargeAction := &shared.ChargeAction{
         Action: shared.ChargeActionActionStart.ToPointer(),
     }

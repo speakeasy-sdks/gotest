@@ -18,10 +18,13 @@ func (o *DisconnectRequest) GetVehicleID() string {
 }
 
 type DisconnectResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// Revoke application access
-	Status      *string
-	StatusCode  int
+	Status *string
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 }
 

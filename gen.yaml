@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 9aa415ebe1e88ff31569d0723ab1156d
   docVersion: 1.0.0
-  speakeasyVersion: 1.89.0
-  generationVersion: 2.125.1
+  speakeasyVersion: 1.91.3
+  generationVersion: 2.139.1
 generation:
   comments:
     disableComments: false
@@ -14,14 +14,14 @@ generation:
   tagNamespacingDisabled: false
 features:
   go:
-    core: 2.88.4
+    core: 2.90.0
     examples: 2.81.2
     flattening: 2.81.1
-    globalSecurity: 2.81.1
+    globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     nameOverrides: 2.81.1
     unions: 2.83.0
 go:
-  version: 1.6.1
+  version: 1.7.0
   maxMethodParams: "4"
   packageName: testsdkcreation

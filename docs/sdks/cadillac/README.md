@@ -1,4 +1,5 @@
 # Cadillac
+(*Cadillac*)
 
 ### Available Operations
 
@@ -30,7 +31,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "corrupti"
+    vehicleID := "lightly"
 
     ctx := context.Background()
     res, err := s.Cadillac.GetChargeTime(ctx, vehicleID)
@@ -82,7 +83,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "provident"
+    vehicleID := "Global"
 
     ctx := context.Background()
     res, err := s.Cadillac.GetVoltage(ctx, vehicleID)

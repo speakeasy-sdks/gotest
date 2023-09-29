@@ -1,4 +1,5 @@
 # Chevrolet
+(*Chevrolet*)
 
 ### Available Operations
 
@@ -30,7 +31,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "distinctio"
+    vehicleID := "lightly"
 
     ctx := context.Background()
     res, err := s.Chevrolet.GetChargeTime(ctx, vehicleID)
@@ -82,7 +83,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "quibusdam"
+    vehicleID := "Global"
 
     ctx := context.Background()
     res, err := s.Chevrolet.GetVoltage(ctx, vehicleID)

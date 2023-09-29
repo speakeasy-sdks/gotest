@@ -1,4 +1,5 @@
 # Tesla
+(*Tesla*)
 
 ### Available Operations
 
@@ -37,7 +38,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "deserunt"
+    vehicleID := "alarm"
 
     ctx := context.Background()
     res, err := s.Tesla.GetAmmeter(ctx, vehicleID)
@@ -89,7 +90,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "suscipit"
+    vehicleID := "lightly"
 
     ctx := context.Background()
     res, err := s.Tesla.GetChargeTime(ctx, vehicleID)
@@ -141,7 +142,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "iure"
+    vehicleID := "Loan"
 
     ctx := context.Background()
     res, err := s.Tesla.GetCompass(ctx, vehicleID)
@@ -193,7 +194,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    id := "magnam"
+    id := "Hatchback"
 
     ctx := context.Background()
     res, err := s.Tesla.GetExteriorTemperature(ctx, id)
@@ -245,7 +246,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    id := "debitis"
+    id := "mobile"
 
     ctx := context.Background()
     res, err := s.Tesla.GetInteriorTemperature(ctx, id)
@@ -297,7 +298,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "ipsa"
+    vehicleID := "withdrawal"
 
     ctx := context.Background()
     res, err := s.Tesla.GetSpeedometer(ctx, vehicleID)
@@ -349,7 +350,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "delectus"
+    vehicleID := "Global"
 
     ctx := context.Background()
     res, err := s.Tesla.GetVoltage(ctx, vehicleID)
@@ -401,7 +402,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "tempora"
+    vehicleID := "danger"
 
     ctx := context.Background()
     res, err := s.Tesla.GetWattmeter(ctx, vehicleID)
@@ -453,7 +454,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "suscipit"
+    vehicleID := "Diesel"
     chargeAmmeter := &shared.ChargeAmmeter{
         Amperage: testsdkcreation.Float32(48),
     }
