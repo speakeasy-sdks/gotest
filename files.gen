@@ -136,6 +136,7 @@ docs/models/operations/getinforesponse.md
 docs/models/operations/batchrequest.md
 docs/models/operations/batchresponse.md
 docs/models/operations/disconnectrequest.md
+docs/models/operations/disconnectstatus.md
 docs/models/operations/disconnectresponse.md
 docs/models/operations/getvehiclerequest.md
 docs/models/operations/getvehicleresponse.md
