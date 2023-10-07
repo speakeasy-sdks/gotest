@@ -22,7 +22,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -31,7 +30,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "lightly"
+    var vehicleID string = "lightly"
 
     ctx := context.Background()
     res, err := s.Chevrolet.GetChargeTime(ctx, vehicleID)
@@ -74,7 +73,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -83,7 +81,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Global"
+    var vehicleID string = "Global"
 
     ctx := context.Background()
     res, err := s.Chevrolet.GetVoltage(ctx, vehicleID)

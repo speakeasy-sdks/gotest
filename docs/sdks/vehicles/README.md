@@ -34,7 +34,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -43,7 +42,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "fuchsia"
+    var vehicleID string = "fuchsia"
     requestBody := []string{
         "/odometer",
     }
@@ -96,7 +95,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -105,7 +103,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Creative"
+    var vehicleID string = "Creative"
 
     ctx := context.Background()
     res, err := s.Vehicles.Disconnect(ctx, vehicleID)
@@ -161,7 +159,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -170,7 +167,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "female"
+    var vehicleID string = "female"
 
     ctx := context.Background()
     res, err := s.Vehicles.Get(ctx, vehicleID)
@@ -223,7 +220,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -232,7 +228,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Games"
+    var vehicleID string = "Games"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetEngineOil(ctx, vehicleID)
@@ -287,7 +283,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -296,7 +291,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "blue"
+    var vehicleID string = "blue"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetFuelTank(ctx, vehicleID)
@@ -350,7 +345,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -359,7 +353,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "36ab27d0-fd9d-4455-823a-ce30af709ffc"
+    var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetLocation(ctx, vehicleID)
@@ -412,7 +406,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -421,7 +414,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "chomp"
+    var vehicleID string = "chomp"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetOdometer(ctx, vehicleID)
@@ -481,7 +474,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -490,9 +482,9 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Hybrid"
-    limit := 244593
-    offset := 528474
+    var vehicleID string = "Hybrid"
+    var limit *int64 = 244593
+    var offset *int64 = 528474
 
     ctx := context.Background()
     res, err := s.Vehicles.GetPermissions(ctx, vehicleID, limit, offset)
@@ -549,7 +541,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -558,7 +549,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "deposit"
+    var vehicleID string = "deposit"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetTirePressure(ctx, vehicleID)
@@ -601,7 +592,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -610,7 +600,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "invoice"
+    var vehicleID string = "invoice"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetVin(ctx, vehicleID)
@@ -670,7 +660,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -679,8 +668,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    limit := 568500
-    offset := 311354
+    var limit *int64 = 568500
+    var offset *int64 = 311354
 
     ctx := context.Background()
     res, err := s.Vehicles.ListVehicles(ctx, limit, offset)
@@ -734,7 +723,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -743,7 +731,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "maximized"
+    var vehicleID string = "maximized"
     securityAction := &shared.SecurityAction{
         Action: shared.SecurityActionActionUnlock.ToPointer(),
     }

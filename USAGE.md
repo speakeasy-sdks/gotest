@@ -9,7 +9,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "36ab27d0-fd9d-4455-823a-ce30af709ffc"
+    var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetLocation(ctx, vehicleID)

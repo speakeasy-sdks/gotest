@@ -29,7 +29,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -38,7 +37,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "alarm"
+    var vehicleID string = "alarm"
 
     ctx := context.Background()
     res, err := s.Tesla.GetAmmeter(ctx, vehicleID)
@@ -81,7 +80,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -90,7 +88,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "lightly"
+    var vehicleID string = "lightly"
 
     ctx := context.Background()
     res, err := s.Tesla.GetChargeTime(ctx, vehicleID)
@@ -133,7 +131,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -142,7 +139,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Loan"
+    var vehicleID string = "Loan"
 
     ctx := context.Background()
     res, err := s.Tesla.GetCompass(ctx, vehicleID)
@@ -185,7 +182,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -194,7 +190,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    id := "Hatchback"
+    var id string = "Hatchback"
 
     ctx := context.Background()
     res, err := s.Tesla.GetExteriorTemperature(ctx, id)
@@ -237,7 +233,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -246,7 +241,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    id := "mobile"
+    var id string = "mobile"
 
     ctx := context.Background()
     res, err := s.Tesla.GetInteriorTemperature(ctx, id)
@@ -289,7 +284,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -298,7 +292,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "withdrawal"
+    var vehicleID string = "withdrawal"
 
     ctx := context.Background()
     res, err := s.Tesla.GetSpeedometer(ctx, vehicleID)
@@ -341,7 +335,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -350,7 +343,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Global"
+    var vehicleID string = "Global"
 
     ctx := context.Background()
     res, err := s.Tesla.GetVoltage(ctx, vehicleID)
@@ -393,7 +386,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -402,7 +394,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "danger"
+    var vehicleID string = "danger"
 
     ctx := context.Background()
     res, err := s.Tesla.GetWattmeter(ctx, vehicleID)
@@ -445,7 +437,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -454,7 +445,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Diesel"
+    var vehicleID string = "Diesel"
     chargeAmmeter := &shared.ChargeAmmeter{
         Amperage: testsdkcreation.Float32(48),
     }

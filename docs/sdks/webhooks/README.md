@@ -32,7 +32,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -41,8 +40,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Chicken"
-    webhookID := "Cedi"
+    var vehicleID string = "Chicken"
+    var webhookID string = "Cedi"
     webhookInfo := &shared.WebhookInfo{
         Vehicleid: testsdkcreation.String("dc6ea99e-57d1-4e41-b129-27e7eb58713e"),
         Webhookid: testsdkcreation.String("9b6ae692-60cc-4b3e-89d8-71e7549cf805"),
@@ -101,7 +100,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -110,8 +108,8 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "deposit"
-    webhookID := "royal"
+    var vehicleID string = "deposit"
+    var webhookID string = "royal"
 
     ctx := context.Background()
     res, err := s.Webhooks.Unsubscribe(ctx, vehicleID, webhookID)

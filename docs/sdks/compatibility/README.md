@@ -56,7 +56,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -65,9 +64,9 @@ func main() {
             BearerAuth: "",
         }),
     )
-    country := "{country}"
-    scope := "{scope}"
-    vin := "{vin}"
+    var country *string = "{country}"
+    var scope *string = "{scope}"
+    var vin *string = "{vin}"
 
     ctx := context.Background()
     res, err := s.Compatibility.ListCompatibility(ctx, country, scope, vin)

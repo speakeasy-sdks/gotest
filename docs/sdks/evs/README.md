@@ -40,7 +40,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -49,7 +48,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Crew"
+    var vehicleID string = "Crew"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryCapacity(ctx, vehicleID)
@@ -103,7 +102,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -112,7 +110,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Movies"
+    var vehicleID string = "Movies"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryLevel(ctx, vehicleID)
@@ -155,7 +153,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -164,7 +161,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "vertical"
+    var vehicleID string = "vertical"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingLimit(ctx, vehicleID)
@@ -218,7 +215,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -227,7 +223,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "Health"
+    var vehicleID string = "Health"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingStatus(ctx, vehicleID)
@@ -270,7 +266,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -279,7 +274,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "dynamic"
+    var vehicleID string = "dynamic"
     chargeLimit := &shared.ChargeLimit{
         Limit: testsdkcreation.Float32(1),
     }
@@ -337,7 +332,6 @@ import(
 	"log"
 	"testsdkcreation"
 	"testsdkcreation/pkg/models/shared"
-	"testsdkcreation/pkg/models/operations"
 )
 
 func main() {
@@ -346,7 +340,7 @@ func main() {
             BearerAuth: "",
         }),
     )
-    vehicleID := "beside"
+    var vehicleID string = "beside"
     chargeAction := &shared.ChargeAction{
         Action: shared.ChargeActionActionStart.ToPointer(),
     }

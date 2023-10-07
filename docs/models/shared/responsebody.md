@@ -3,93 +3,93 @@
 
 ## Supported Types
 
-### Location
+### ResponseBodyLocation
 
 ```go
-responseBody := shared.CreateResponseBodyLocation(shared.Location{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyLocation(shared.ResponseBodyLocation{/* values here */})
 ```
 
-### Odometer
+### ResponseBodyOdometer
 
 ```go
-responseBody := shared.CreateResponseBodyOdometer(shared.Odometer{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyOdometer(shared.ResponseBodyOdometer{/* values here */})
 ```
 
-### FuelTank
+### ResponseBodyFuelTank
 
 ```go
-responseBody := shared.CreateResponseBodyFuelTank(shared.FuelTank{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyFuelTank(shared.ResponseBodyFuelTank{/* values here */})
 ```
 
-### TirePressure
+### ResponseBodyTirePressure
 
 ```go
-responseBody := shared.CreateResponseBodyTirePressure(shared.TirePressure{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyTirePressure(shared.ResponseBodyTirePressure{/* values here */})
 ```
 
-### EngineOil
+### ResponseBodyEngineOil
 
 ```go
-responseBody := shared.CreateResponseBodyEngineOil(shared.EngineOil{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyEngineOil(shared.ResponseBodyEngineOil{/* values here */})
 ```
 
-### ChargeStatus
+### ResponseBodyChargeStatus
 
 ```go
-responseBody := shared.CreateResponseBodyChargeStatus(shared.ChargeStatus{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyChargeStatus(shared.ResponseBodyChargeStatus{/* values here */})
 ```
 
-### ChargeLimit
+### ResponseBodyChargeLimit
 
 ```go
-responseBody := shared.CreateResponseBodyChargeLimit(shared.ChargeLimit{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyChargeLimit(shared.ResponseBodyChargeLimit{/* values here */})
 ```
 
-### ChargeTime
+### ResponseBodyChargeTime
 
 ```go
-responseBody := shared.CreateResponseBodyChargeTime(shared.ChargeTime{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyChargeTime(shared.ResponseBodyChargeTime{/* values here */})
 ```
 
-### ChargeVoltage
+### ResponseBodyChargeVoltage
 
 ```go
-responseBody := shared.CreateResponseBodyChargeVoltage(shared.ChargeVoltage{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyChargeVoltage(shared.ResponseBodyChargeVoltage{/* values here */})
 ```
 
-### BatteryLevel
+### ResponseBodyBatteryLevel
 
 ```go
-responseBody := shared.CreateResponseBodyBatteryLevel(shared.BatteryLevel{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyBatteryLevel(shared.ResponseBodyBatteryLevel{/* values here */})
 ```
 
-### BatteryCapacity
+### ResponseBodyBatteryCapacity
 
 ```go
-responseBody := shared.CreateResponseBodyBatteryCapacity(shared.BatteryCapacity{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyBatteryCapacity(shared.ResponseBodyBatteryCapacity{/* values here */})
 ```
 
-### CompatibilityResponse
+### ResponseBodyCompatibilityResponse
 
 ```go
-responseBody := shared.CreateResponseBodyCompatibilityResponse(shared.CompatibilityResponse{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyCompatibilityResponse(shared.ResponseBodyCompatibilityResponse{/* values here */})
 ```
 
-### VinInfo
+### ResponseBodyVinInfo
 
 ```go
-responseBody := shared.CreateResponseBodyVinInfo(shared.VinInfo{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyVinInfo(shared.ResponseBodyVinInfo{/* values here */})
 ```
 
-### UserInfo
+### ResponseBodyUserInfo
 
 ```go
-responseBody := shared.CreateResponseBodyUserInfo(shared.UserInfo{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodyUserInfo(shared.ResponseBodyUserInfo{/* values here */})
 ```
 
-### SuccessResponse
+### ResponseBodySuccessResponse
 
 ```go
-responseBody := shared.CreateResponseBodySuccessResponse(shared.SuccessResponse{/* values here */})
+responseBody := shared.CreateResponseBodyResponseBodySuccessResponse(shared.ResponseBodySuccessResponse{/* values here */})
 ```
 
