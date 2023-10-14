@@ -33,10 +33,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "alarm"
 
     ctx := context.Background()
@@ -84,10 +84,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "lightly"
 
     ctx := context.Background()
@@ -135,10 +135,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Loan"
 
     ctx := context.Background()
@@ -186,10 +186,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var id string = "Hatchback"
 
     ctx := context.Background()
@@ -237,10 +237,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var id string = "mobile"
 
     ctx := context.Background()
@@ -288,10 +288,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "withdrawal"
 
     ctx := context.Background()
@@ -339,10 +339,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Global"
 
     ctx := context.Background()
@@ -390,10 +390,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "danger"
 
     ctx := context.Background()
@@ -441,11 +441,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Diesel"
+
     chargeAmmeter := &shared.ChargeAmmeter{
         Amperage: testsdkcreation.Float32(48),
     }

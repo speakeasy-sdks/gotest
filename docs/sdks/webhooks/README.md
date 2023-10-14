@@ -36,12 +36,14 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Chicken"
+
     var webhookID string = "Cedi"
+
     webhookInfo := &shared.WebhookInfo{
         Vehicleid: testsdkcreation.String("dc6ea99e-57d1-4e41-b129-27e7eb58713e"),
         Webhookid: testsdkcreation.String("9b6ae692-60cc-4b3e-89d8-71e7549cf805"),
@@ -104,11 +106,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "deposit"
+
     var webhookID string = "royal"
 
     ctx := context.Background()

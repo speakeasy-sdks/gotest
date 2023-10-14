@@ -25,9 +25,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
 
     ctx := context.Background()

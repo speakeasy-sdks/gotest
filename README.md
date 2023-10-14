@@ -13,7 +13,7 @@ go get github.com/speakeasy-sdks/gotest
 ```go
 package main
 
-import(
+import (
 	"context"
 	"log"
 	"testsdkcreation"
@@ -21,23 +21,23 @@ import(
 )
 
 func main() {
-    s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
-    )
-    var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
+	s := testsdkcreation.New(
+		testsdkcreation.WithSecurity(""),
+	)
 
-    ctx := context.Background()
-    res, err := s.Vehicles.GetLocation(ctx, vehicleID)
-    if err != nil {
-        log.Fatal(err)
-    }
+	var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
-    if res.Location != nil {
-        // handle response
-    }
+	ctx := context.Background()
+	res, err := s.Vehicles.GetLocation(ctx, vehicleID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Location != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 

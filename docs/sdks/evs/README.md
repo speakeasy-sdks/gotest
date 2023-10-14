@@ -44,10 +44,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Crew"
 
     ctx := context.Background()
@@ -106,10 +106,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Movies"
 
     ctx := context.Background()
@@ -157,10 +157,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "vertical"
 
     ctx := context.Background()
@@ -219,10 +219,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Health"
 
     ctx := context.Background()
@@ -270,11 +270,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "dynamic"
+
     chargeLimit := &shared.ChargeLimit{
         Limit: testsdkcreation.Float32(1),
     }
@@ -336,11 +337,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "beside"
+
     chargeAction := &shared.ChargeAction{
         Action: shared.ChargeActionActionStart.ToPointer(),
     }

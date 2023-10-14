@@ -26,10 +26,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "lightly"
 
     ctx := context.Background()
@@ -77,10 +77,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Global"
 
     ctx := context.Background()

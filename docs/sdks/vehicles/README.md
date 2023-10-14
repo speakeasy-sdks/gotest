@@ -38,11 +38,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "fuchsia"
+
     requestBody := []string{
         "/odometer",
     }
@@ -99,10 +100,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Creative"
 
     ctx := context.Background()
@@ -163,10 +164,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "female"
 
     ctx := context.Background()
@@ -224,10 +225,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Games"
 
     ctx := context.Background()
@@ -287,10 +288,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "blue"
 
     ctx := context.Background()
@@ -349,10 +350,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
 
     ctx := context.Background()
@@ -410,10 +411,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "chomp"
 
     ctx := context.Background()
@@ -478,12 +479,14 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "Hybrid"
+
     var limit *int64 = 244593
+
     var offset *int64 = 528474
 
     ctx := context.Background()
@@ -545,10 +548,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "deposit"
 
     ctx := context.Background()
@@ -596,10 +599,10 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "invoice"
 
     ctx := context.Background()
@@ -664,11 +667,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var limit *int64 = 568500
+
     var offset *int64 = 311354
 
     ctx := context.Background()
@@ -727,11 +731,12 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var vehicleID string = "maximized"
+
     securityAction := &shared.SecurityAction{
         Action: shared.SecurityActionActionUnlock.ToPointer(),
     }

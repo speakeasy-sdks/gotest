@@ -60,12 +60,14 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(shared.Security{
-            BearerAuth: "",
-        }),
+        testsdkcreation.WithSecurity(""),
     )
+
+
     var country *string = "{country}"
+
     var scope *string = "{scope}"
+
     var vin *string = "{vin}"
 
     ctx := context.Background()
