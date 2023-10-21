@@ -40,9 +40,9 @@ func main() {
     )
 
 
-    var vehicleID string = "Chicken"
+    var vehicleID string = "string"
 
-    var webhookID string = "Cedi"
+    var webhookID string = "string"
 
     webhookInfo := &shared.WebhookInfo{
         Vehicleid: testsdkcreation.String("dc6ea99e-57d1-4e41-b129-27e7eb58713e"),
@@ -110,9 +110,9 @@ func main() {
     )
 
 
-    var vehicleID string = "deposit"
+    var vehicleID string = "string"
 
-    var webhookID string = "royal"
+    var webhookID string = "string"
 
     ctx := context.Background()
     res, err := s.Webhooks.Unsubscribe(ctx, vehicleID, webhookID)

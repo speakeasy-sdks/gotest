@@ -42,7 +42,7 @@ func main() {
     )
 
 
-    var vehicleID string = "fuchsia"
+    var vehicleID string = "string"
 
     requestBody := []string{
         "/odometer",
@@ -104,7 +104,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Creative"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.Disconnect(ctx, vehicleID)
@@ -168,7 +168,7 @@ func main() {
     )
 
 
-    var vehicleID string = "female"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.Get(ctx, vehicleID)
@@ -229,7 +229,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Games"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetEngineOil(ctx, vehicleID)
@@ -292,7 +292,7 @@ func main() {
     )
 
 
-    var vehicleID string = "blue"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetFuelTank(ctx, vehicleID)
@@ -415,7 +415,7 @@ func main() {
     )
 
 
-    var vehicleID string = "chomp"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetOdometer(ctx, vehicleID)
@@ -483,11 +483,11 @@ func main() {
     )
 
 
-    var vehicleID string = "Hybrid"
+    var vehicleID string = "string"
 
-    var limit *int64 = 244593
+    var limit *int64 = 362662
 
-    var offset *int64 = 528474
+    var offset *int64 = 729387
 
     ctx := context.Background()
     res, err := s.Vehicles.GetPermissions(ctx, vehicleID, limit, offset)
@@ -552,7 +552,7 @@ func main() {
     )
 
 
-    var vehicleID string = "deposit"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetTirePressure(ctx, vehicleID)
@@ -603,7 +603,7 @@ func main() {
     )
 
 
-    var vehicleID string = "invoice"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Vehicles.GetVin(ctx, vehicleID)
@@ -735,7 +735,7 @@ func main() {
     )
 
 
-    var vehicleID string = "maximized"
+    var vehicleID string = "string"
 
     securityAction := &shared.SecurityAction{
         Action: shared.SecurityActionActionUnlock.ToPointer(),

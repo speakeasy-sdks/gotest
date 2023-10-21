@@ -37,7 +37,7 @@ func main() {
     )
 
 
-    var vehicleID string = "alarm"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetAmmeter(ctx, vehicleID)
@@ -88,7 +88,7 @@ func main() {
     )
 
 
-    var vehicleID string = "lightly"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetChargeTime(ctx, vehicleID)
@@ -139,7 +139,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Loan"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetCompass(ctx, vehicleID)
@@ -190,7 +190,7 @@ func main() {
     )
 
 
-    var id string = "Hatchback"
+    var id string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetExteriorTemperature(ctx, id)
@@ -241,7 +241,7 @@ func main() {
     )
 
 
-    var id string = "mobile"
+    var id string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetInteriorTemperature(ctx, id)
@@ -292,7 +292,7 @@ func main() {
     )
 
 
-    var vehicleID string = "withdrawal"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetSpeedometer(ctx, vehicleID)
@@ -343,7 +343,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Global"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetVoltage(ctx, vehicleID)
@@ -394,7 +394,7 @@ func main() {
     )
 
 
-    var vehicleID string = "danger"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Tesla.GetWattmeter(ctx, vehicleID)
@@ -445,7 +445,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Diesel"
+    var vehicleID string = "string"
 
     chargeAmmeter := &shared.ChargeAmmeter{
         Amperage: testsdkcreation.Float32(48),

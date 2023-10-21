@@ -48,7 +48,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Crew"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryCapacity(ctx, vehicleID)
@@ -110,7 +110,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Movies"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Evs.GetBatteryLevel(ctx, vehicleID)
@@ -161,7 +161,7 @@ func main() {
     )
 
 
-    var vehicleID string = "vertical"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingLimit(ctx, vehicleID)
@@ -223,7 +223,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Health"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Evs.GetChargingStatus(ctx, vehicleID)
@@ -274,7 +274,7 @@ func main() {
     )
 
 
-    var vehicleID string = "dynamic"
+    var vehicleID string = "string"
 
     chargeLimit := &shared.ChargeLimit{
         Limit: testsdkcreation.Float32(1),
@@ -341,7 +341,7 @@ func main() {
     )
 
 
-    var vehicleID string = "beside"
+    var vehicleID string = "string"
 
     chargeAction := &shared.ChargeAction{
         Action: shared.ChargeActionActionStart.ToPointer(),

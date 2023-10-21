@@ -30,7 +30,7 @@ func main() {
     )
 
 
-    var vehicleID string = "lightly"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Cadillac.GetChargeTime(ctx, vehicleID)
@@ -81,7 +81,7 @@ func main() {
     )
 
 
-    var vehicleID string = "Global"
+    var vehicleID string = "string"
 
     ctx := context.Background()
     res, err := s.Cadillac.GetVoltage(ctx, vehicleID)
