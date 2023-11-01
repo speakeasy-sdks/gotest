@@ -525,107 +525,107 @@ func CreateResponseBodyResponseBodySuccessResponse(responseBodySuccessResponse R
 
 func (u *ResponseBody) UnmarshalJSON(data []byte) error {
 
-	responseBodyOdometer := new(ResponseBodyOdometer)
+	responseBodyOdometer := ResponseBodyOdometer{}
 	if err := utils.UnmarshalJSON(data, &responseBodyOdometer, "", true, true); err == nil {
-		u.ResponseBodyOdometer = responseBodyOdometer
+		u.ResponseBodyOdometer = &responseBodyOdometer
 		u.Type = ResponseBodyTypeResponseBodyOdometer
 		return nil
 	}
 
-	responseBodyEngineOil := new(ResponseBodyEngineOil)
+	responseBodyEngineOil := ResponseBodyEngineOil{}
 	if err := utils.UnmarshalJSON(data, &responseBodyEngineOil, "", true, true); err == nil {
-		u.ResponseBodyEngineOil = responseBodyEngineOil
+		u.ResponseBodyEngineOil = &responseBodyEngineOil
 		u.Type = ResponseBodyTypeResponseBodyEngineOil
 		return nil
 	}
 
-	responseBodyChargeLimit := new(ResponseBodyChargeLimit)
+	responseBodyChargeLimit := ResponseBodyChargeLimit{}
 	if err := utils.UnmarshalJSON(data, &responseBodyChargeLimit, "", true, true); err == nil {
-		u.ResponseBodyChargeLimit = responseBodyChargeLimit
+		u.ResponseBodyChargeLimit = &responseBodyChargeLimit
 		u.Type = ResponseBodyTypeResponseBodyChargeLimit
 		return nil
 	}
 
-	responseBodyChargeTime := new(ResponseBodyChargeTime)
+	responseBodyChargeTime := ResponseBodyChargeTime{}
 	if err := utils.UnmarshalJSON(data, &responseBodyChargeTime, "", true, true); err == nil {
-		u.ResponseBodyChargeTime = responseBodyChargeTime
+		u.ResponseBodyChargeTime = &responseBodyChargeTime
 		u.Type = ResponseBodyTypeResponseBodyChargeTime
 		return nil
 	}
 
-	responseBodyChargeVoltage := new(ResponseBodyChargeVoltage)
+	responseBodyChargeVoltage := ResponseBodyChargeVoltage{}
 	if err := utils.UnmarshalJSON(data, &responseBodyChargeVoltage, "", true, true); err == nil {
-		u.ResponseBodyChargeVoltage = responseBodyChargeVoltage
+		u.ResponseBodyChargeVoltage = &responseBodyChargeVoltage
 		u.Type = ResponseBodyTypeResponseBodyChargeVoltage
 		return nil
 	}
 
-	responseBodyBatteryCapacity := new(ResponseBodyBatteryCapacity)
+	responseBodyBatteryCapacity := ResponseBodyBatteryCapacity{}
 	if err := utils.UnmarshalJSON(data, &responseBodyBatteryCapacity, "", true, true); err == nil {
-		u.ResponseBodyBatteryCapacity = responseBodyBatteryCapacity
+		u.ResponseBodyBatteryCapacity = &responseBodyBatteryCapacity
 		u.Type = ResponseBodyTypeResponseBodyBatteryCapacity
 		return nil
 	}
 
-	responseBodyVinInfo := new(ResponseBodyVinInfo)
+	responseBodyVinInfo := ResponseBodyVinInfo{}
 	if err := utils.UnmarshalJSON(data, &responseBodyVinInfo, "", true, true); err == nil {
-		u.ResponseBodyVinInfo = responseBodyVinInfo
+		u.ResponseBodyVinInfo = &responseBodyVinInfo
 		u.Type = ResponseBodyTypeResponseBodyVinInfo
 		return nil
 	}
 
-	responseBodyUserInfo := new(ResponseBodyUserInfo)
+	responseBodyUserInfo := ResponseBodyUserInfo{}
 	if err := utils.UnmarshalJSON(data, &responseBodyUserInfo, "", true, true); err == nil {
-		u.ResponseBodyUserInfo = responseBodyUserInfo
+		u.ResponseBodyUserInfo = &responseBodyUserInfo
 		u.Type = ResponseBodyTypeResponseBodyUserInfo
 		return nil
 	}
 
-	responseBodyLocation := new(ResponseBodyLocation)
+	responseBodyLocation := ResponseBodyLocation{}
 	if err := utils.UnmarshalJSON(data, &responseBodyLocation, "", true, true); err == nil {
-		u.ResponseBodyLocation = responseBodyLocation
+		u.ResponseBodyLocation = &responseBodyLocation
 		u.Type = ResponseBodyTypeResponseBodyLocation
 		return nil
 	}
 
-	responseBodyChargeStatus := new(ResponseBodyChargeStatus)
+	responseBodyChargeStatus := ResponseBodyChargeStatus{}
 	if err := utils.UnmarshalJSON(data, &responseBodyChargeStatus, "", true, true); err == nil {
-		u.ResponseBodyChargeStatus = responseBodyChargeStatus
+		u.ResponseBodyChargeStatus = &responseBodyChargeStatus
 		u.Type = ResponseBodyTypeResponseBodyChargeStatus
 		return nil
 	}
 
-	responseBodyBatteryLevel := new(ResponseBodyBatteryLevel)
+	responseBodyBatteryLevel := ResponseBodyBatteryLevel{}
 	if err := utils.UnmarshalJSON(data, &responseBodyBatteryLevel, "", true, true); err == nil {
-		u.ResponseBodyBatteryLevel = responseBodyBatteryLevel
+		u.ResponseBodyBatteryLevel = &responseBodyBatteryLevel
 		u.Type = ResponseBodyTypeResponseBodyBatteryLevel
 		return nil
 	}
 
-	responseBodySuccessResponse := new(ResponseBodySuccessResponse)
+	responseBodySuccessResponse := ResponseBodySuccessResponse{}
 	if err := utils.UnmarshalJSON(data, &responseBodySuccessResponse, "", true, true); err == nil {
-		u.ResponseBodySuccessResponse = responseBodySuccessResponse
+		u.ResponseBodySuccessResponse = &responseBodySuccessResponse
 		u.Type = ResponseBodyTypeResponseBodySuccessResponse
 		return nil
 	}
 
-	responseBodyFuelTank := new(ResponseBodyFuelTank)
+	responseBodyFuelTank := ResponseBodyFuelTank{}
 	if err := utils.UnmarshalJSON(data, &responseBodyFuelTank, "", true, true); err == nil {
-		u.ResponseBodyFuelTank = responseBodyFuelTank
+		u.ResponseBodyFuelTank = &responseBodyFuelTank
 		u.Type = ResponseBodyTypeResponseBodyFuelTank
 		return nil
 	}
 
-	responseBodyCompatibilityResponse := new(ResponseBodyCompatibilityResponse)
+	responseBodyCompatibilityResponse := ResponseBodyCompatibilityResponse{}
 	if err := utils.UnmarshalJSON(data, &responseBodyCompatibilityResponse, "", true, true); err == nil {
-		u.ResponseBodyCompatibilityResponse = responseBodyCompatibilityResponse
+		u.ResponseBodyCompatibilityResponse = &responseBodyCompatibilityResponse
 		u.Type = ResponseBodyTypeResponseBodyCompatibilityResponse
 		return nil
 	}
 
-	responseBodyTirePressure := new(ResponseBodyTirePressure)
+	responseBodyTirePressure := ResponseBodyTirePressure{}
 	if err := utils.UnmarshalJSON(data, &responseBodyTirePressure, "", true, true); err == nil {
-		u.ResponseBodyTirePressure = responseBodyTirePressure
+		u.ResponseBodyTirePressure = &responseBodyTirePressure
 		u.Type = ResponseBodyTypeResponseBodyTirePressure
 		return nil
 	}

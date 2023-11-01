@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 9aa415ebe1e88ff31569d0723ab1156d
   docVersion: 1.0.0
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.109.2
+  generationVersion: 2.173.0
 generation:
   comments:
     disableComments: false
@@ -21,9 +21,9 @@ features:
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.0
     nameOverrides: 2.81.1
-    unions: 2.84.0
+    unions: 2.84.1
 go:
-  version: 1.9.0
+  version: 1.9.1
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/gotest
   maxMethodParams: "4"
