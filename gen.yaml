@@ -1,13 +1,27 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 9aa415ebe1e88ff31569d0723ab1156d
+  docVersion: 1.0.0
+  speakeasyVersion: 1.112.1
+  generationVersion: 2.173.0
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
+  comments: {}
   sdkClassName: testsdkcreation
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/speakeasy-sdks/gotest.git
+features:
+  go:
+    core: 2.94.0
+    examples: 2.81.3
+    flattening: 2.81.1
+    globalSecurity: 2.82.2
+    globalServerURLs: 2.82.0
+    nameOverrides: 2.81.1
+    unions: 2.84.1
 go:
-  version: 0.0.1
+  version: 0.1.0
+  flattenGlobalSecurity: true
+  installationURL: https://github.com/speakeasy-sdks/gotest
   maxMethodParams: "4"
   packageName: testsdkcreation
+  published: true
+  repoSubDirectory: .
