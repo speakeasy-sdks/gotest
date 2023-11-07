@@ -15,20 +15,20 @@ import (
 	"testsdkcreation/pkg/utils"
 )
 
-// vehicles - Operations about vehicles
-type vehicles struct {
+// Vehicles - Operations about vehicles
+type Vehicles struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newVehicles(sdkConfig sdkConfiguration) *vehicles {
-	return &vehicles{
+func newVehicles(sdkConfig sdkConfiguration) *Vehicles {
+	return &Vehicles{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Batch
 // __Description__ Returns a list of responses from multiple Smartcar endpoints, all combined into a single request. Note: Batch requests is a paid feature. Please contact us to upgrade your plan and obtain access.
-func (s *vehicles) Batch(ctx context.Context, vehicleID string, requestBody []string) (*operations.BatchResponse, error) {
+func (s *Vehicles) Batch(ctx context.Context, vehicleID string, requestBody []string) (*operations.BatchResponse, error) {
 	request := operations.BatchRequest{
 		VehicleID:   vehicleID,
 		RequestBody: requestBody,
@@ -91,6 +91,10 @@ func (s *vehicles) Batch(ctx context.Context, vehicleID string, requestBody []st
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -106,7 +110,7 @@ func (s *vehicles) Batch(ctx context.Context, vehicleID string, requestBody []st
 // |  Name 	|Type   	|Boolean   	|
 // |---	|---	|---	|
 // |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
-func (s *vehicles) Disconnect(ctx context.Context, vehicleID string) (*operations.DisconnectResponse, error) {
+func (s *Vehicles) Disconnect(ctx context.Context, vehicleID string) (*operations.DisconnectResponse, error) {
 	request := operations.DisconnectRequest{
 		VehicleID: vehicleID,
 	}
@@ -161,6 +165,10 @@ func (s *vehicles) Disconnect(ctx context.Context, vehicleID string) (*operation
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -183,7 +191,7 @@ func (s *vehicles) Disconnect(ctx context.Context, vehicleID string) (*operation
 // |`make`|string|The manufacturer of the vehicle.|
 // |`model`|integer|The model of the vehicle.|
 // |`year`|integer|The model year.|
-func (s *vehicles) Get(ctx context.Context, vehicleID string) (*operations.GetVehicleResponse, error) {
+func (s *Vehicles) Get(ctx context.Context, vehicleID string) (*operations.GetVehicleResponse, error) {
 	request := operations.GetVehicleRequest{
 		VehicleID: vehicleID,
 	}
@@ -238,6 +246,10 @@ func (s *vehicles) Get(ctx context.Context, vehicleID string) (*operations.GetVe
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -257,7 +269,7 @@ func (s *vehicles) Get(ctx context.Context, vehicleID string) (*operations.GetVe
 // |  Name 	|Type   	|Boolean   	|
 // |---	|---	|---	|
 // |  `lifeRemaining`|   number|  The engine oil’s remaining life span (as a percentage). Oil life is based on the current quality of the oil. (in percent).|
-func (s *vehicles) GetEngineOil(ctx context.Context, vehicleID string) (*operations.GetEngineOilResponse, error) {
+func (s *Vehicles) GetEngineOil(ctx context.Context, vehicleID string) (*operations.GetEngineOilResponse, error) {
 	request := operations.GetEngineOilRequest{
 		VehicleID: vehicleID,
 	}
@@ -312,6 +324,10 @@ func (s *vehicles) GetEngineOil(ctx context.Context, vehicleID string) (*operati
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -333,7 +349,7 @@ func (s *vehicles) GetEngineOil(ctx context.Context, vehicleID string) (*operati
 // |`range`|number|The estimated remaining distance the car can travel (in kilometers by default or in miles using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
 // |`percentRemaining`|number|The remaining level of fuel in the tank (in percent).|
 // |`amountRemaining`|number|The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
-func (s *vehicles) GetFuelTank(ctx context.Context, vehicleID string) (*operations.GetFuelTankResponse, error) {
+func (s *Vehicles) GetFuelTank(ctx context.Context, vehicleID string) (*operations.GetFuelTankResponse, error) {
 	request := operations.GetFuelTankRequest{
 		VehicleID: vehicleID,
 	}
@@ -388,6 +404,10 @@ func (s *vehicles) GetFuelTank(ctx context.Context, vehicleID string) (*operatio
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -408,7 +428,7 @@ func (s *vehicles) GetFuelTank(ctx context.Context, vehicleID string) (*operatio
 // |--|--|--|
 // |`latitude`|number|The latitude (in degrees).|
 // |`longitude`|number|The longitude (in degrees).|
-func (s *vehicles) GetLocation(ctx context.Context, vehicleID string) (*operations.GetLocationResponse, error) {
+func (s *Vehicles) GetLocation(ctx context.Context, vehicleID string) (*operations.GetLocationResponse, error) {
 	request := operations.GetLocationRequest{
 		VehicleID: vehicleID,
 	}
@@ -463,6 +483,10 @@ func (s *vehicles) GetLocation(ctx context.Context, vehicleID string) (*operatio
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -482,7 +506,7 @@ func (s *vehicles) GetLocation(ctx context.Context, vehicleID string) (*operatio
 // |Name| Type|Desciprtion|
 // |--|--|--|
 // |`distance`|number|The current odometer of the vehicle (in kilometers by default or in miles using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
-func (s *vehicles) GetOdometer(ctx context.Context, vehicleID string) (*operations.GetOdometerResponse, error) {
+func (s *Vehicles) GetOdometer(ctx context.Context, vehicleID string) (*operations.GetOdometerResponse, error) {
 	request := operations.GetOdometerRequest{
 		VehicleID: vehicleID,
 	}
@@ -537,6 +561,10 @@ func (s *vehicles) GetOdometer(ctx context.Context, vehicleID string) (*operatio
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -563,7 +591,7 @@ func (s *vehicles) GetOdometer(ctx context.Context, vehicleID string) (*operatio
 // |`paging`|object|Metadata about the current list of elements.|
 // |`paging.count`|integer|The total number of elements for the entire query (not just the given page).|
 // |`paging.offset`|integer|The current start index of the returned list of elements.|
-func (s *vehicles) GetPermissions(ctx context.Context, vehicleID string, limit *int64, offset *int64) (*operations.GetPermissionsResponse, error) {
+func (s *Vehicles) GetPermissions(ctx context.Context, vehicleID string, limit *int64, offset *int64) (*operations.GetPermissionsResponse, error) {
 	request := operations.GetPermissionsRequest{
 		VehicleID: vehicleID,
 		Limit:     limit,
@@ -624,6 +652,10 @@ func (s *vehicles) GetPermissions(ctx context.Context, vehicleID string, limit *
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -645,7 +677,7 @@ func (s *vehicles) GetPermissions(ctx context.Context, vehicleID string, limit *
 // |`frontRight`|number|The current air pressure of the front right tire (in kilopascals by default or in pounds per square inch using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
 // |`backLeft`|number|The current air pressure of the back left tire (in kilopascals by default or in pounds per square inch using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
 // |`backRight`|number|The current air pressure of the back right tire (in kilopascals by default or in pounds per square inch using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
-func (s *vehicles) GetTirePressure(ctx context.Context, vehicleID string) (*operations.GetTirePressureResponse, error) {
+func (s *Vehicles) GetTirePressure(ctx context.Context, vehicleID string) (*operations.GetTirePressureResponse, error) {
 	request := operations.GetTirePressureRequest{
 		VehicleID: vehicleID,
 	}
@@ -700,6 +732,10 @@ func (s *vehicles) GetTirePressure(ctx context.Context, vehicleID string) (*oper
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -709,7 +745,7 @@ func (s *vehicles) GetTirePressure(ctx context.Context, vehicleID string) (*oper
 // __Description__
 //
 // Returns the vehicle’s manufacturer identifier.
-func (s *vehicles) GetVin(ctx context.Context, vehicleID string) (*operations.GetVinResponse, error) {
+func (s *Vehicles) GetVin(ctx context.Context, vehicleID string) (*operations.GetVinResponse, error) {
 	request := operations.GetVinRequest{
 		VehicleID: vehicleID,
 	}
@@ -764,6 +800,10 @@ func (s *vehicles) GetVin(ctx context.Context, vehicleID string) (*operations.Ge
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -790,7 +830,7 @@ func (s *vehicles) GetVin(ctx context.Context, vehicleID string) (*operations.Ge
 // |`paging`|object|Metadata about the current list of elements.|
 // |`paging.count`|integer|The total number of elements for the entire query (not just the given page).|
 // |`paging.offset`|integer|The current start index of the returned list of elements.|
-func (s *vehicles) ListVehicles(ctx context.Context, limit *int64, offset *int64) (*operations.ListVehiclesResponse, error) {
+func (s *Vehicles) ListVehicles(ctx context.Context, limit *int64, offset *int64) (*operations.ListVehiclesResponse, error) {
 	request := operations.ListVehiclesRequest{
 		Limit:  limit,
 		Offset: offset,
@@ -847,6 +887,10 @@ func (s *vehicles) ListVehicles(ctx context.Context, limit *int64, offset *int64
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -866,7 +910,7 @@ func (s *vehicles) ListVehicles(ctx context.Context, limit *int64, offset *int64
 // |  Name 	|Type   	|Boolean   	|
 // |---	|---	|---	|
 // |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
-func (s *vehicles) LockUnlock(ctx context.Context, vehicleID string, securityAction *shared.SecurityAction) (*operations.LockUnlockResponse, error) {
+func (s *Vehicles) LockUnlock(ctx context.Context, vehicleID string, securityAction *shared.SecurityAction) (*operations.LockUnlockResponse, error) {
 	request := operations.LockUnlockRequest{
 		VehicleID:      vehicleID,
 		SecurityAction: securityAction,
@@ -929,6 +973,10 @@ func (s *vehicles) LockUnlock(ctx context.Context, vehicleID string, securityAct
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

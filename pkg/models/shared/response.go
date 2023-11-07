@@ -4,24 +4,23 @@ package shared
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"testsdkcreation/pkg/utils"
 	"time"
 )
 
-type ResponseBodySuccessResponseStatus string
+type SchemasStatus string
 
 const (
-	ResponseBodySuccessResponseStatusSuccess ResponseBodySuccessResponseStatus = "SUCCESS"
-	ResponseBodySuccessResponseStatusFailed  ResponseBodySuccessResponseStatus = "FAILED"
+	SchemasStatusSuccess SchemasStatus = "SUCCESS"
+	SchemasStatusFailed  SchemasStatus = "FAILED"
 )
 
-func (e ResponseBodySuccessResponseStatus) ToPointer() *ResponseBodySuccessResponseStatus {
+func (e SchemasStatus) ToPointer() *SchemasStatus {
 	return &e
 }
 
-func (e *ResponseBodySuccessResponseStatus) UnmarshalJSON(data []byte) error {
+func (e *SchemasStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,176 +29,176 @@ func (e *ResponseBodySuccessResponseStatus) UnmarshalJSON(data []byte) error {
 	case "SUCCESS":
 		fallthrough
 	case "FAILED":
-		*e = ResponseBodySuccessResponseStatus(v)
+		*e = SchemasStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ResponseBodySuccessResponseStatus: %v", v)
+		return fmt.Errorf("invalid value for SchemasStatus: %v", v)
 	}
 }
 
-type ResponseBodySuccessResponse struct {
-	Message *string                            `json:"message,omitempty"`
-	Status  *ResponseBodySuccessResponseStatus `json:"status,omitempty"`
+type SuccessResponseSchemas struct {
+	Message *string        `json:"message,omitempty"`
+	Status  *SchemasStatus `json:"status,omitempty"`
 }
 
-func (o *ResponseBodySuccessResponse) GetMessage() *string {
+func (o *SuccessResponseSchemas) GetMessage() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Message
 }
 
-func (o *ResponseBodySuccessResponse) GetStatus() *ResponseBodySuccessResponseStatus {
+func (o *SuccessResponseSchemas) GetStatus() *SchemasStatus {
 	if o == nil {
 		return nil
 	}
 	return o.Status
 }
 
-// ResponseBodyUserInfo - A user ID (UUID v4).
-type ResponseBodyUserInfo struct {
+// UserInfoSchemas - A user ID (UUID v4).
+type UserInfoSchemas struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *ResponseBodyUserInfo) GetID() *string {
+func (o *UserInfoSchemas) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-// ResponseBodyVinInfo - A vehicle’s manufacturer identifier.
-type ResponseBodyVinInfo struct {
+// VinInfoSchemas - A vehicle’s manufacturer identifier.
+type VinInfoSchemas struct {
 	Vin *string `json:"vin,omitempty"`
 }
 
-func (o *ResponseBodyVinInfo) GetVin() *string {
+func (o *VinInfoSchemas) GetVin() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Vin
 }
 
-type ResponseBodyCompatibilityResponse struct {
+type CompatibilityResponseSchemas struct {
 	Capabilities []Capability `json:"capabilities,omitempty"`
 	Compatible   *bool        `json:"compatible,omitempty"`
 	Reason       *string      `json:"reason,omitempty"`
 }
 
-func (o *ResponseBodyCompatibilityResponse) GetCapabilities() []Capability {
+func (o *CompatibilityResponseSchemas) GetCapabilities() []Capability {
 	if o == nil {
 		return nil
 	}
 	return o.Capabilities
 }
 
-func (o *ResponseBodyCompatibilityResponse) GetCompatible() *bool {
+func (o *CompatibilityResponseSchemas) GetCompatible() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Compatible
 }
 
-func (o *ResponseBodyCompatibilityResponse) GetReason() *string {
+func (o *CompatibilityResponseSchemas) GetReason() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Reason
 }
 
-type ResponseBodyBatteryCapacity struct {
+type Schemas struct {
 	// The total capacity of the vehicle's battery (in kilowatt-hours).
 	Capacity *float32 `json:"capacity,omitempty"`
 }
 
-func (o *ResponseBodyBatteryCapacity) GetCapacity() *float32 {
+func (o *Schemas) GetCapacity() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Capacity
 }
 
-type ResponseBodyBatteryLevel struct {
+type BatteryLevelSchemas struct {
 	// An EV battery’s state of charge (in percent).
 	PercentRemaining *float32 `json:"percentRemaining,omitempty"`
 	// The estimated remaining distance the vehicle can travel (in kilometers by default or in miles using the sc-unit-system).
 	Range *float32 `json:"range,omitempty"`
 }
 
-func (o *ResponseBodyBatteryLevel) GetPercentRemaining() *float32 {
+func (o *BatteryLevelSchemas) GetPercentRemaining() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.PercentRemaining
 }
 
-func (o *ResponseBodyBatteryLevel) GetRange() *float32 {
+func (o *BatteryLevelSchemas) GetRange() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Range
 }
 
-type ResponseBodyChargeVoltage struct {
+type ChargeVoltageSchemas struct {
 	// The voltage of the charger measured by the vehicle.
 	Voltage *float32 `json:"voltage,omitempty"`
 }
 
-func (o *ResponseBodyChargeVoltage) GetVoltage() *float32 {
+func (o *ChargeVoltageSchemas) GetVoltage() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Voltage
 }
 
-type ResponseBodyChargeTime struct {
+type ChargeTimeSchemas struct {
 	// The date and time the vehicle expects to complete this charging session.
 	Time *time.Time `json:"time,omitempty"`
 }
 
-func (r ResponseBodyChargeTime) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(r, "", false)
+func (c ChargeTimeSchemas) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
 }
 
-func (r *ResponseBodyChargeTime) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, true); err != nil {
+func (c *ChargeTimeSchemas) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *ResponseBodyChargeTime) GetTime() *time.Time {
+func (o *ChargeTimeSchemas) GetTime() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.Time
 }
 
-type ResponseBodyChargeLimit struct {
+type ChargeLimitSchemas struct {
 	// The level at which the vehicle should stop charging and be considered fully charged (in percent).
 	Limit *float32 `json:"limit,omitempty"`
 }
 
-func (o *ResponseBodyChargeLimit) GetLimit() *float32 {
+func (o *ChargeLimitSchemas) GetLimit() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Limit
 }
 
-type ResponseBodyChargeStatusState string
+type State string
 
 const (
-	ResponseBodyChargeStatusStateCharging     ResponseBodyChargeStatusState = "CHARGING"
-	ResponseBodyChargeStatusStateFullyCharged ResponseBodyChargeStatusState = "FULLY_CHARGED"
-	ResponseBodyChargeStatusStateNotCharging  ResponseBodyChargeStatusState = "NOT_CHARGING"
+	StateCharging     State = "CHARGING"
+	StateFullyCharged State = "FULLY_CHARGED"
+	StateNotCharging  State = "NOT_CHARGING"
 )
 
-func (e ResponseBodyChargeStatusState) ToPointer() *ResponseBodyChargeStatusState {
+func (e State) ToPointer() *State {
 	return &e
 }
 
-func (e *ResponseBodyChargeStatusState) UnmarshalJSON(data []byte) error {
+func (e *State) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -210,46 +209,46 @@ func (e *ResponseBodyChargeStatusState) UnmarshalJSON(data []byte) error {
 	case "FULLY_CHARGED":
 		fallthrough
 	case "NOT_CHARGING":
-		*e = ResponseBodyChargeStatusState(v)
+		*e = State(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ResponseBodyChargeStatusState: %v", v)
+		return fmt.Errorf("invalid value for State: %v", v)
 	}
 }
 
-type ResponseBodyChargeStatus struct {
+type ChargeStatusSchemas struct {
 	// Indicates whether a charging cable is currently plugged into the vehicle’s charge port.
-	IsPluggedIn *bool                          `json:"isPluggedIn,omitempty"`
-	State       *ResponseBodyChargeStatusState `json:"state,omitempty"`
+	IsPluggedIn *bool  `json:"isPluggedIn,omitempty"`
+	State       *State `json:"state,omitempty"`
 }
 
-func (o *ResponseBodyChargeStatus) GetIsPluggedIn() *bool {
+func (o *ChargeStatusSchemas) GetIsPluggedIn() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.IsPluggedIn
 }
 
-func (o *ResponseBodyChargeStatus) GetState() *ResponseBodyChargeStatusState {
+func (o *ChargeStatusSchemas) GetState() *State {
 	if o == nil {
 		return nil
 	}
 	return o.State
 }
 
-type ResponseBodyEngineOil struct {
+type EngineOilSchemas struct {
 	// The engine oil’s remaining life span (as a percentage). Oil life is based on the current quality of the oil. (in percent).
 	LifeRemaining *float32 `json:"lifeRemaining,omitempty"`
 }
 
-func (o *ResponseBodyEngineOil) GetLifeRemaining() *float32 {
+func (o *EngineOilSchemas) GetLifeRemaining() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.LifeRemaining
 }
 
-type ResponseBodyTirePressure struct {
+type TirePressureSchemas struct {
 	// The current air pressure of the back left tire (in kilopascals by default or in pounds per square inch using the sc-unit-system).
 	BackLeft *float32 `json:"backLeft,omitempty"`
 	// The current air pressure of the back right tire (in kilopascals by default or in pounds per square inch using the sc-unit-system).
@@ -260,35 +259,35 @@ type ResponseBodyTirePressure struct {
 	FrontRight *float32 `json:"frontRight,omitempty"`
 }
 
-func (o *ResponseBodyTirePressure) GetBackLeft() *float32 {
+func (o *TirePressureSchemas) GetBackLeft() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.BackLeft
 }
 
-func (o *ResponseBodyTirePressure) GetBackRight() *float32 {
+func (o *TirePressureSchemas) GetBackRight() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.BackRight
 }
 
-func (o *ResponseBodyTirePressure) GetFrontLeft() *float32 {
+func (o *TirePressureSchemas) GetFrontLeft() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.FrontLeft
 }
 
-func (o *ResponseBodyTirePressure) GetFrontRight() *float32 {
+func (o *TirePressureSchemas) GetFrontRight() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.FrontRight
 }
 
-type ResponseBodyFuelTank struct {
+type FuelTankSchemas struct {
 	// The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the sc-unit-system).
 	AmountRemaining *float32 `json:"amountRemaining,omitempty"`
 	// The remaining level of fuel in the tank (in percent).
@@ -297,418 +296,69 @@ type ResponseBodyFuelTank struct {
 	Range *float32 `json:"range,omitempty"`
 }
 
-func (o *ResponseBodyFuelTank) GetAmountRemaining() *float32 {
+func (o *FuelTankSchemas) GetAmountRemaining() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.AmountRemaining
 }
 
-func (o *ResponseBodyFuelTank) GetPercentRemaining() *float32 {
+func (o *FuelTankSchemas) GetPercentRemaining() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.PercentRemaining
 }
 
-func (o *ResponseBodyFuelTank) GetRange() *float32 {
+func (o *FuelTankSchemas) GetRange() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Range
 }
 
-type ResponseBodyOdometer struct {
+type OdometerSchemas struct {
 	Distance *float32 `json:"distance,omitempty"`
 }
 
-func (o *ResponseBodyOdometer) GetDistance() *float32 {
+func (o *OdometerSchemas) GetDistance() *float32 {
 	if o == nil {
 		return nil
 	}
 	return o.Distance
 }
 
-type ResponseBodyLocation struct {
+type LocationSchemas struct {
 	Latitude  float32 `json:"latitude"`
 	Longitude float32 `json:"longitude"`
 }
 
-func (o *ResponseBodyLocation) GetLatitude() float32 {
+func (o *LocationSchemas) GetLatitude() float32 {
 	if o == nil {
 		return 0.0
 	}
 	return o.Latitude
 }
 
-func (o *ResponseBodyLocation) GetLongitude() float32 {
+func (o *LocationSchemas) GetLongitude() float32 {
 	if o == nil {
 		return 0.0
 	}
 	return o.Longitude
 }
 
-type ResponseBodyType string
+type Code string
 
 const (
-	ResponseBodyTypeResponseBodyLocation              ResponseBodyType = "Response_body_Location"
-	ResponseBodyTypeResponseBodyOdometer              ResponseBodyType = "Response_body_Odometer"
-	ResponseBodyTypeResponseBodyFuelTank              ResponseBodyType = "Response_body_FuelTank"
-	ResponseBodyTypeResponseBodyTirePressure          ResponseBodyType = "Response_body_TirePressure"
-	ResponseBodyTypeResponseBodyEngineOil             ResponseBodyType = "Response_body_EngineOil"
-	ResponseBodyTypeResponseBodyChargeStatus          ResponseBodyType = "Response_body_ChargeStatus"
-	ResponseBodyTypeResponseBodyChargeLimit           ResponseBodyType = "Response_body_ChargeLimit"
-	ResponseBodyTypeResponseBodyChargeTime            ResponseBodyType = "Response_body_ChargeTime"
-	ResponseBodyTypeResponseBodyChargeVoltage         ResponseBodyType = "Response_body_ChargeVoltage"
-	ResponseBodyTypeResponseBodyBatteryLevel          ResponseBodyType = "Response_body_BatteryLevel"
-	ResponseBodyTypeResponseBodyBatteryCapacity       ResponseBodyType = "Response_body_BatteryCapacity"
-	ResponseBodyTypeResponseBodyCompatibilityResponse ResponseBodyType = "Response_body_CompatibilityResponse"
-	ResponseBodyTypeResponseBodyVinInfo               ResponseBodyType = "Response_body_VinInfo"
-	ResponseBodyTypeResponseBodyUserInfo              ResponseBodyType = "Response_body_UserInfo"
-	ResponseBodyTypeResponseBodySuccessResponse       ResponseBodyType = "Response_body_SuccessResponse"
+	CodeTwoHundred  Code = "200"
+	CodeFiveHundred Code = "500"
 )
 
-type ResponseBody struct {
-	ResponseBodyLocation              *ResponseBodyLocation
-	ResponseBodyOdometer              *ResponseBodyOdometer
-	ResponseBodyFuelTank              *ResponseBodyFuelTank
-	ResponseBodyTirePressure          *ResponseBodyTirePressure
-	ResponseBodyEngineOil             *ResponseBodyEngineOil
-	ResponseBodyChargeStatus          *ResponseBodyChargeStatus
-	ResponseBodyChargeLimit           *ResponseBodyChargeLimit
-	ResponseBodyChargeTime            *ResponseBodyChargeTime
-	ResponseBodyChargeVoltage         *ResponseBodyChargeVoltage
-	ResponseBodyBatteryLevel          *ResponseBodyBatteryLevel
-	ResponseBodyBatteryCapacity       *ResponseBodyBatteryCapacity
-	ResponseBodyCompatibilityResponse *ResponseBodyCompatibilityResponse
-	ResponseBodyVinInfo               *ResponseBodyVinInfo
-	ResponseBodyUserInfo              *ResponseBodyUserInfo
-	ResponseBodySuccessResponse       *ResponseBodySuccessResponse
-
-	Type ResponseBodyType
-}
-
-func CreateResponseBodyResponseBodyLocation(responseBodyLocation ResponseBodyLocation) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyLocation
-
-	return ResponseBody{
-		ResponseBodyLocation: &responseBodyLocation,
-		Type:                 typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyOdometer(responseBodyOdometer ResponseBodyOdometer) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyOdometer
-
-	return ResponseBody{
-		ResponseBodyOdometer: &responseBodyOdometer,
-		Type:                 typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyFuelTank(responseBodyFuelTank ResponseBodyFuelTank) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyFuelTank
-
-	return ResponseBody{
-		ResponseBodyFuelTank: &responseBodyFuelTank,
-		Type:                 typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyTirePressure(responseBodyTirePressure ResponseBodyTirePressure) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyTirePressure
-
-	return ResponseBody{
-		ResponseBodyTirePressure: &responseBodyTirePressure,
-		Type:                     typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyEngineOil(responseBodyEngineOil ResponseBodyEngineOil) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyEngineOil
-
-	return ResponseBody{
-		ResponseBodyEngineOil: &responseBodyEngineOil,
-		Type:                  typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyChargeStatus(responseBodyChargeStatus ResponseBodyChargeStatus) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyChargeStatus
-
-	return ResponseBody{
-		ResponseBodyChargeStatus: &responseBodyChargeStatus,
-		Type:                     typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyChargeLimit(responseBodyChargeLimit ResponseBodyChargeLimit) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyChargeLimit
-
-	return ResponseBody{
-		ResponseBodyChargeLimit: &responseBodyChargeLimit,
-		Type:                    typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyChargeTime(responseBodyChargeTime ResponseBodyChargeTime) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyChargeTime
-
-	return ResponseBody{
-		ResponseBodyChargeTime: &responseBodyChargeTime,
-		Type:                   typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyChargeVoltage(responseBodyChargeVoltage ResponseBodyChargeVoltage) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyChargeVoltage
-
-	return ResponseBody{
-		ResponseBodyChargeVoltage: &responseBodyChargeVoltage,
-		Type:                      typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyBatteryLevel(responseBodyBatteryLevel ResponseBodyBatteryLevel) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyBatteryLevel
-
-	return ResponseBody{
-		ResponseBodyBatteryLevel: &responseBodyBatteryLevel,
-		Type:                     typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyBatteryCapacity(responseBodyBatteryCapacity ResponseBodyBatteryCapacity) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyBatteryCapacity
-
-	return ResponseBody{
-		ResponseBodyBatteryCapacity: &responseBodyBatteryCapacity,
-		Type:                        typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyCompatibilityResponse(responseBodyCompatibilityResponse ResponseBodyCompatibilityResponse) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyCompatibilityResponse
-
-	return ResponseBody{
-		ResponseBodyCompatibilityResponse: &responseBodyCompatibilityResponse,
-		Type:                              typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyVinInfo(responseBodyVinInfo ResponseBodyVinInfo) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyVinInfo
-
-	return ResponseBody{
-		ResponseBodyVinInfo: &responseBodyVinInfo,
-		Type:                typ,
-	}
-}
-
-func CreateResponseBodyResponseBodyUserInfo(responseBodyUserInfo ResponseBodyUserInfo) ResponseBody {
-	typ := ResponseBodyTypeResponseBodyUserInfo
-
-	return ResponseBody{
-		ResponseBodyUserInfo: &responseBodyUserInfo,
-		Type:                 typ,
-	}
-}
-
-func CreateResponseBodyResponseBodySuccessResponse(responseBodySuccessResponse ResponseBodySuccessResponse) ResponseBody {
-	typ := ResponseBodyTypeResponseBodySuccessResponse
-
-	return ResponseBody{
-		ResponseBodySuccessResponse: &responseBodySuccessResponse,
-		Type:                        typ,
-	}
-}
-
-func (u *ResponseBody) UnmarshalJSON(data []byte) error {
-
-	responseBodyOdometer := ResponseBodyOdometer{}
-	if err := utils.UnmarshalJSON(data, &responseBodyOdometer, "", true, true); err == nil {
-		u.ResponseBodyOdometer = &responseBodyOdometer
-		u.Type = ResponseBodyTypeResponseBodyOdometer
-		return nil
-	}
-
-	responseBodyEngineOil := ResponseBodyEngineOil{}
-	if err := utils.UnmarshalJSON(data, &responseBodyEngineOil, "", true, true); err == nil {
-		u.ResponseBodyEngineOil = &responseBodyEngineOil
-		u.Type = ResponseBodyTypeResponseBodyEngineOil
-		return nil
-	}
-
-	responseBodyChargeLimit := ResponseBodyChargeLimit{}
-	if err := utils.UnmarshalJSON(data, &responseBodyChargeLimit, "", true, true); err == nil {
-		u.ResponseBodyChargeLimit = &responseBodyChargeLimit
-		u.Type = ResponseBodyTypeResponseBodyChargeLimit
-		return nil
-	}
-
-	responseBodyChargeTime := ResponseBodyChargeTime{}
-	if err := utils.UnmarshalJSON(data, &responseBodyChargeTime, "", true, true); err == nil {
-		u.ResponseBodyChargeTime = &responseBodyChargeTime
-		u.Type = ResponseBodyTypeResponseBodyChargeTime
-		return nil
-	}
-
-	responseBodyChargeVoltage := ResponseBodyChargeVoltage{}
-	if err := utils.UnmarshalJSON(data, &responseBodyChargeVoltage, "", true, true); err == nil {
-		u.ResponseBodyChargeVoltage = &responseBodyChargeVoltage
-		u.Type = ResponseBodyTypeResponseBodyChargeVoltage
-		return nil
-	}
-
-	responseBodyBatteryCapacity := ResponseBodyBatteryCapacity{}
-	if err := utils.UnmarshalJSON(data, &responseBodyBatteryCapacity, "", true, true); err == nil {
-		u.ResponseBodyBatteryCapacity = &responseBodyBatteryCapacity
-		u.Type = ResponseBodyTypeResponseBodyBatteryCapacity
-		return nil
-	}
-
-	responseBodyVinInfo := ResponseBodyVinInfo{}
-	if err := utils.UnmarshalJSON(data, &responseBodyVinInfo, "", true, true); err == nil {
-		u.ResponseBodyVinInfo = &responseBodyVinInfo
-		u.Type = ResponseBodyTypeResponseBodyVinInfo
-		return nil
-	}
-
-	responseBodyUserInfo := ResponseBodyUserInfo{}
-	if err := utils.UnmarshalJSON(data, &responseBodyUserInfo, "", true, true); err == nil {
-		u.ResponseBodyUserInfo = &responseBodyUserInfo
-		u.Type = ResponseBodyTypeResponseBodyUserInfo
-		return nil
-	}
-
-	responseBodyLocation := ResponseBodyLocation{}
-	if err := utils.UnmarshalJSON(data, &responseBodyLocation, "", true, true); err == nil {
-		u.ResponseBodyLocation = &responseBodyLocation
-		u.Type = ResponseBodyTypeResponseBodyLocation
-		return nil
-	}
-
-	responseBodyChargeStatus := ResponseBodyChargeStatus{}
-	if err := utils.UnmarshalJSON(data, &responseBodyChargeStatus, "", true, true); err == nil {
-		u.ResponseBodyChargeStatus = &responseBodyChargeStatus
-		u.Type = ResponseBodyTypeResponseBodyChargeStatus
-		return nil
-	}
-
-	responseBodyBatteryLevel := ResponseBodyBatteryLevel{}
-	if err := utils.UnmarshalJSON(data, &responseBodyBatteryLevel, "", true, true); err == nil {
-		u.ResponseBodyBatteryLevel = &responseBodyBatteryLevel
-		u.Type = ResponseBodyTypeResponseBodyBatteryLevel
-		return nil
-	}
-
-	responseBodySuccessResponse := ResponseBodySuccessResponse{}
-	if err := utils.UnmarshalJSON(data, &responseBodySuccessResponse, "", true, true); err == nil {
-		u.ResponseBodySuccessResponse = &responseBodySuccessResponse
-		u.Type = ResponseBodyTypeResponseBodySuccessResponse
-		return nil
-	}
-
-	responseBodyFuelTank := ResponseBodyFuelTank{}
-	if err := utils.UnmarshalJSON(data, &responseBodyFuelTank, "", true, true); err == nil {
-		u.ResponseBodyFuelTank = &responseBodyFuelTank
-		u.Type = ResponseBodyTypeResponseBodyFuelTank
-		return nil
-	}
-
-	responseBodyCompatibilityResponse := ResponseBodyCompatibilityResponse{}
-	if err := utils.UnmarshalJSON(data, &responseBodyCompatibilityResponse, "", true, true); err == nil {
-		u.ResponseBodyCompatibilityResponse = &responseBodyCompatibilityResponse
-		u.Type = ResponseBodyTypeResponseBodyCompatibilityResponse
-		return nil
-	}
-
-	responseBodyTirePressure := ResponseBodyTirePressure{}
-	if err := utils.UnmarshalJSON(data, &responseBodyTirePressure, "", true, true); err == nil {
-		u.ResponseBodyTirePressure = &responseBodyTirePressure
-		u.Type = ResponseBodyTypeResponseBodyTirePressure
-		return nil
-	}
-
-	return errors.New("could not unmarshal into supported union types")
-}
-
-func (u ResponseBody) MarshalJSON() ([]byte, error) {
-	if u.ResponseBodyLocation != nil {
-		return utils.MarshalJSON(u.ResponseBodyLocation, "", true)
-	}
-
-	if u.ResponseBodyOdometer != nil {
-		return utils.MarshalJSON(u.ResponseBodyOdometer, "", true)
-	}
-
-	if u.ResponseBodyFuelTank != nil {
-		return utils.MarshalJSON(u.ResponseBodyFuelTank, "", true)
-	}
-
-	if u.ResponseBodyTirePressure != nil {
-		return utils.MarshalJSON(u.ResponseBodyTirePressure, "", true)
-	}
-
-	if u.ResponseBodyEngineOil != nil {
-		return utils.MarshalJSON(u.ResponseBodyEngineOil, "", true)
-	}
-
-	if u.ResponseBodyChargeStatus != nil {
-		return utils.MarshalJSON(u.ResponseBodyChargeStatus, "", true)
-	}
-
-	if u.ResponseBodyChargeLimit != nil {
-		return utils.MarshalJSON(u.ResponseBodyChargeLimit, "", true)
-	}
-
-	if u.ResponseBodyChargeTime != nil {
-		return utils.MarshalJSON(u.ResponseBodyChargeTime, "", true)
-	}
-
-	if u.ResponseBodyChargeVoltage != nil {
-		return utils.MarshalJSON(u.ResponseBodyChargeVoltage, "", true)
-	}
-
-	if u.ResponseBodyBatteryLevel != nil {
-		return utils.MarshalJSON(u.ResponseBodyBatteryLevel, "", true)
-	}
-
-	if u.ResponseBodyBatteryCapacity != nil {
-		return utils.MarshalJSON(u.ResponseBodyBatteryCapacity, "", true)
-	}
-
-	if u.ResponseBodyCompatibilityResponse != nil {
-		return utils.MarshalJSON(u.ResponseBodyCompatibilityResponse, "", true)
-	}
-
-	if u.ResponseBodyVinInfo != nil {
-		return utils.MarshalJSON(u.ResponseBodyVinInfo, "", true)
-	}
-
-	if u.ResponseBodyUserInfo != nil {
-		return utils.MarshalJSON(u.ResponseBodyUserInfo, "", true)
-	}
-
-	if u.ResponseBodySuccessResponse != nil {
-		return utils.MarshalJSON(u.ResponseBodySuccessResponse, "", true)
-	}
-
-	return nil, errors.New("could not marshal union type: all fields are null")
-}
-
-type ResponseCode string
-
-const (
-	ResponseCodeTwoHundred  ResponseCode = "200"
-	ResponseCodeFiveHundred ResponseCode = "500"
-)
-
-func (e ResponseCode) ToPointer() *ResponseCode {
+func (e Code) ToPointer() *Code {
 	return &e
 }
 
-func (e *ResponseCode) UnmarshalJSON(data []byte) error {
+func (e *Code) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -717,28 +367,28 @@ func (e *ResponseCode) UnmarshalJSON(data []byte) error {
 	case "200":
 		fallthrough
 	case "500":
-		*e = ResponseCode(v)
+		*e = Code(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ResponseCode: %v", v)
+		return fmt.Errorf("invalid value for Code: %v", v)
 	}
 }
 
 type Response struct {
-	Body    *ResponseBody `json:"body,omitempty"`
-	Code    *ResponseCode `json:"code,omitempty"`
-	Headers []Header      `json:"headers,omitempty"`
-	Path    *string       `json:"path,omitempty"`
+	Body    interface{} `json:"body,omitempty"`
+	Code    *Code       `json:"code,omitempty"`
+	Headers []Header    `json:"headers,omitempty"`
+	Path    *string     `json:"path,omitempty"`
 }
 
-func (o *Response) GetBody() *ResponseBody {
+func (o *Response) GetBody() interface{} {
 	if o == nil {
 		return nil
 	}
 	return o.Body
 }
 
-func (o *Response) GetCode() *ResponseCode {
+func (o *Response) GetCode() *Code {
 	if o == nil {
 		return nil
 	}

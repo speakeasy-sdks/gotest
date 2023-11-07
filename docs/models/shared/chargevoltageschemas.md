@@ -1,4 +1,4 @@
-# ResponseBodyChargeVoltage
+# ChargeVoltageSchemas
 
 
 ## Fields

@@ -14,12 +14,12 @@ import (
 	"testsdkcreation/pkg/utils"
 )
 
-type chevrolet struct {
+type Chevrolet struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newChevrolet(sdkConfig sdkConfiguration) *chevrolet {
-	return &chevrolet{
+func newChevrolet(sdkConfig sdkConfiguration) *Chevrolet {
+	return &Chevrolet{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -28,7 +28,7 @@ func newChevrolet(sdkConfig sdkConfiguration) *chevrolet {
 // __Description__
 //
 // When the vehicle is charging, this endpoint returns the date and time the vehicle expects to complete this charging session. When the vehicle is not charging, this endpoint results in a vehicle state error.
-func (s *chevrolet) GetChargeTime(ctx context.Context, vehicleID string) (*operations.GetChevroletChargeTimeResponse, error) {
+func (s *Chevrolet) GetChargeTime(ctx context.Context, vehicleID string) (*operations.GetChevroletChargeTimeResponse, error) {
 	request := operations.GetChevroletChargeTimeRequest{
 		VehicleID: vehicleID,
 	}
@@ -83,6 +83,10 @@ func (s *chevrolet) GetChargeTime(ctx context.Context, vehicleID string) (*opera
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -92,7 +96,7 @@ func (s *chevrolet) GetChargeTime(ctx context.Context, vehicleID string) (*opera
 // __Description__
 //
 // When the vehicle is plugged in, this endpoint returns the voltage of the charger measured by the vehicle. When the vehicle is not plugged in, this endpoint results in a vehicle state error.
-func (s *chevrolet) GetVoltage(ctx context.Context, vehicleID string) (*operations.GetChevroletVoltageResponse, error) {
+func (s *Chevrolet) GetVoltage(ctx context.Context, vehicleID string) (*operations.GetChevroletVoltageResponse, error) {
 	request := operations.GetChevroletVoltageRequest{
 		VehicleID: vehicleID,
 	}
@@ -147,6 +151,10 @@ func (s *chevrolet) GetVoltage(ctx context.Context, vehicleID string) (*operatio
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

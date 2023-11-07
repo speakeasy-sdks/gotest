@@ -1,4 +1,4 @@
-# ResponseBodyBatteryLevel
+# BatteryLevelSchemas
 
 
 ## Fields

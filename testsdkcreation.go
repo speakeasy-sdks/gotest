@@ -65,17 +65,17 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // Testsdkcreation - Smartcar API: # How do I use Postman with Smartcar?
 // We've detailed how to get started with Smartcar in Postman [here](https://www.notion.so/smartcarapi/How-do-I-use-Postman-with-Smartcar-b8e8483bae8b43a986715582beb54bd4).
 type Testsdkcreation struct {
-	Cadillac  *cadillac
-	Chevrolet *chevrolet
 	// Operations about compatibility
-	Compatibility *compatibility
-	// Operations about electric vehicles
-	Evs   *evs
-	Tesla *tesla
-	User  *user
+	Compatibility *Compatibility
+	User          *User
 	// Operations about vehicles
-	Vehicles *vehicles
-	Webhooks *webhooks
+	Vehicles *Vehicles
+	Tesla    *Tesla
+	// Operations about electric vehicles
+	Evs       *Evs
+	Cadillac  *Cadillac
+	Chevrolet *Chevrolet
+	Webhooks  *Webhooks
 
 	sdkConfiguration sdkConfiguration
 }
@@ -145,9 +145,9 @@ func New(opts ...SDKOption) *Testsdkcreation {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.1.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.1.0 2.173.0 1.0.0 testsdkcreation",
+			SDKVersion:        "0.2.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.181.1 1.0.0 testsdkcreation",
 		},
 	}
 	for _, opt := range opts {
@@ -166,19 +166,19 @@ func New(opts ...SDKOption) *Testsdkcreation {
 		}
 	}
 
-	sdk.Cadillac = newCadillac(sdk.sdkConfiguration)
-
-	sdk.Chevrolet = newChevrolet(sdk.sdkConfiguration)
-
 	sdk.Compatibility = newCompatibility(sdk.sdkConfiguration)
-
-	sdk.Evs = newEvs(sdk.sdkConfiguration)
-
-	sdk.Tesla = newTesla(sdk.sdkConfiguration)
 
 	sdk.User = newUser(sdk.sdkConfiguration)
 
 	sdk.Vehicles = newVehicles(sdk.sdkConfiguration)
+
+	sdk.Tesla = newTesla(sdk.sdkConfiguration)
+
+	sdk.Evs = newEvs(sdk.sdkConfiguration)
+
+	sdk.Cadillac = newCadillac(sdk.sdkConfiguration)
+
+	sdk.Chevrolet = newChevrolet(sdk.sdkConfiguration)
 
 	sdk.Webhooks = newWebhooks(sdk.sdkConfiguration)
 

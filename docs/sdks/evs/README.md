@@ -1,5 +1,5 @@
 # Evs
-(*Evs*)
+(*.Evs*)
 
 ## Overview
 
@@ -344,7 +344,7 @@ func main() {
     var vehicleID string = "string"
 
     chargeAction := &shared.ChargeAction{
-        Action: shared.ChargeActionActionStart.ToPointer(),
+        Action: shared.ActionStart.ToPointer(),
     }
 
     ctx := context.Background()

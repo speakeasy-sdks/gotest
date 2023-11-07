@@ -1,4 +1,4 @@
-# ResponseBodyBatteryCapacity
+# Schemas
 
 
 ## Fields

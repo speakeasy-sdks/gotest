@@ -1,10 +1,8 @@
-# ResponseBodyVinInfo
-
-A vehicle’s manufacturer identifier.
+# OdometerSchemas
 
 
 ## Fields
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Vin`              | **string*          | :heavy_minus_sign: | N/A                | 5YJSA1CN5DFP00101  |
+| `Distance`         | **float32*         | :heavy_minus_sign: | N/A                | 104.32             |

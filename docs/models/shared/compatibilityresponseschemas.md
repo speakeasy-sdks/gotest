@@ -1,4 +1,4 @@
-# CompatibilityResponse
+# CompatibilityResponseSchemas
 
 
 ## Fields

@@ -1,4 +1,4 @@
-# ResponseBodyUserInfo
+# UserInfoSchemas
 
 A user ID (UUID v4).
 

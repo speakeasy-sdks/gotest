@@ -1,5 +1,5 @@
 # Compatibility
-(*Compatibility*)
+(*.Compatibility*)
 
 ## Overview
 

@@ -14,12 +14,12 @@ import (
 	"testsdkcreation/pkg/utils"
 )
 
-type cadillac struct {
+type Cadillac struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCadillac(sdkConfig sdkConfiguration) *cadillac {
-	return &cadillac{
+func newCadillac(sdkConfig sdkConfiguration) *Cadillac {
+	return &Cadillac{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -28,7 +28,7 @@ func newCadillac(sdkConfig sdkConfiguration) *cadillac {
 // __Description__
 //
 // When the vehicle is charging, this endpoint returns the date and time the vehicle expects to complete this charging session. When the vehicle is not charging, this endpoint results in a vehicle state error.
-func (s *cadillac) GetChargeTime(ctx context.Context, vehicleID string) (*operations.GetCadillacChargeTimeResponse, error) {
+func (s *Cadillac) GetChargeTime(ctx context.Context, vehicleID string) (*operations.GetCadillacChargeTimeResponse, error) {
 	request := operations.GetCadillacChargeTimeRequest{
 		VehicleID: vehicleID,
 	}
@@ -83,6 +83,10 @@ func (s *cadillac) GetChargeTime(ctx context.Context, vehicleID string) (*operat
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -92,7 +96,7 @@ func (s *cadillac) GetChargeTime(ctx context.Context, vehicleID string) (*operat
 // __Description__
 //
 // When the vehicle is plugged in, this endpoint returns the voltage of the charger measured by the vehicle. When the vehicle is not plugged in, this endpoint results in a vehicle state error.
-func (s *cadillac) GetVoltage(ctx context.Context, vehicleID string) (*operations.GetCadillacVoltageResponse, error) {
+func (s *Cadillac) GetVoltage(ctx context.Context, vehicleID string) (*operations.GetCadillacVoltageResponse, error) {
 	request := operations.GetCadillacVoltageRequest{
 		VehicleID: vehicleID,
 	}
@@ -147,6 +151,10 @@ func (s *cadillac) GetVoltage(ctx context.Context, vehicleID string) (*operation
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

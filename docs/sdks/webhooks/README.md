@@ -1,5 +1,5 @@
 # Webhooks
-(*Webhooks*)
+(*.Webhooks*)
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# ResponseBodyLocation
+# LocationSchemas
 
 
 ## Fields

@@ -1,4 +1,4 @@
-# ResponseBodyChargeTime
+# ChargeTimeSchemas
 
 
 ## Fields

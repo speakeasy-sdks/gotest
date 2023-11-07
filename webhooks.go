@@ -14,12 +14,12 @@ import (
 	"testsdkcreation/pkg/utils"
 )
 
-type webhooks struct {
+type Webhooks struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newWebhooks(sdkConfig sdkConfiguration) *webhooks {
-	return &webhooks{
+func newWebhooks(sdkConfig sdkConfiguration) *Webhooks {
+	return &Webhooks{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -38,7 +38,7 @@ func newWebhooks(sdkConfig sdkConfiguration) *webhooks {
 // |  Name 	|Type   	|Boolean   	|
 // |---	|---	|---	|
 // |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
-func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID string, webhookInfo *shared.WebhookInfo) (*operations.SubscribeResponse, error) {
+func (s *Webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID string, webhookInfo *shared.WebhookInfo) (*operations.SubscribeResponse, error) {
 	request := operations.SubscribeRequest{
 		VehicleID:   vehicleID,
 		WebhookID:   webhookID,
@@ -102,6 +102,10 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -121,7 +125,7 @@ func (s *webhooks) Subscribe(ctx context.Context, vehicleID string, webhookID st
 // |  Name 	|Type   	|Boolean   	|
 // |---	|---	|---	|
 // |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
-func (s *webhooks) Unsubscribe(ctx context.Context, vehicleID string, webhookID string) (*operations.UnsubscribeResponse, error) {
+func (s *Webhooks) Unsubscribe(ctx context.Context, vehicleID string, webhookID string) (*operations.UnsubscribeResponse, error) {
 	request := operations.UnsubscribeRequest{
 		VehicleID: vehicleID,
 		WebhookID: webhookID,
@@ -177,6 +181,10 @@ func (s *webhooks) Unsubscribe(ctx context.Context, vehicleID string, webhookID 
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
