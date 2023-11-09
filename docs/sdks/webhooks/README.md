@@ -1,5 +1,5 @@
 # Webhooks
-(*.Webhooks*)
+(*Webhooks*)
 
 ### Available Operations
 
@@ -63,18 +63,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `ctx`                                                     | [context.Context](https://pkg.go.dev/context#Context)     | :heavy_check_mark:                                        | The context to use for the request.                       |
-| `vehicleID`                                               | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
-| `webhookID`                                               | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
-| `webhookInfo`                                             | [*shared.WebhookInfo](../../models/shared/webhookinfo.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `ctx`                                                            | [context.Context](https://pkg.go.dev/context#Context)            | :heavy_check_mark:                                               | The context to use for the request.                              |
+| `vehicleID`                                                      | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |
+| `webhookID`                                                      | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |
+| `webhookInfo`                                                    | [*shared.WebhookInfo](../../../pkg/models/shared/webhookinfo.md) | :heavy_minus_sign:                                               | N/A                                                              |
 
 
 ### Response
 
-**[*operations.SubscribeResponse](../../models/operations/subscriberesponse.md), error**
-
+**[*operations.SubscribeResponse](../../pkg/models/operations/subscriberesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Unsubscribe
 
@@ -137,5 +139,7 @@ func main() {
 
 ### Response
 
-**[*operations.UnsubscribeResponse](../../models/operations/unsubscriberesponse.md), error**
-
+**[*operations.UnsubscribeResponse](../../pkg/models/operations/unsubscriberesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

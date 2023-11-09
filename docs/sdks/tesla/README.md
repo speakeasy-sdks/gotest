@@ -1,5 +1,5 @@
 # Tesla
-(*.Tesla*)
+(*Tesla*)
 
 ### Available Operations
 
@@ -61,8 +61,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaAmmeterResponse](../../models/operations/getteslaammeterresponse.md), error**
-
+**[*operations.GetTeslaAmmeterResponse](../../pkg/models/operations/getteslaammeterresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetChargeTime
 
@@ -112,8 +114,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaChargeTimeResponse](../../models/operations/getteslachargetimeresponse.md), error**
-
+**[*operations.GetTeslaChargeTimeResponse](../../pkg/models/operations/getteslachargetimeresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetCompass
 
@@ -163,8 +167,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaCompassResponse](../../models/operations/getteslacompassresponse.md), error**
-
+**[*operations.GetTeslaCompassResponse](../../pkg/models/operations/getteslacompassresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetExteriorTemperature
 
@@ -214,8 +220,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaExteriorTemperatureResponse](../../models/operations/getteslaexteriortemperatureresponse.md), error**
-
+**[*operations.GetTeslaExteriorTemperatureResponse](../../pkg/models/operations/getteslaexteriortemperatureresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetInteriorTemperature
 
@@ -265,8 +273,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaInteriorTemperatureResponse](../../models/operations/getteslainteriortemperatureresponse.md), error**
-
+**[*operations.GetTeslaInteriorTemperatureResponse](../../pkg/models/operations/getteslainteriortemperatureresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetSpeedometer
 
@@ -316,8 +326,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaSpeedResponse](../../models/operations/getteslaspeedresponse.md), error**
-
+**[*operations.GetTeslaSpeedResponse](../../pkg/models/operations/getteslaspeedresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetVoltage
 
@@ -367,8 +379,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaVoltageResponse](../../models/operations/getteslavoltageresponse.md), error**
-
+**[*operations.GetTeslaVoltageResponse](../../pkg/models/operations/getteslavoltageresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetWattmeter
 
@@ -418,8 +432,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTeslaWattmeterResponse](../../models/operations/getteslawattmeterresponse.md), error**
-
+**[*operations.GetTeslaWattmeterResponse](../../pkg/models/operations/getteslawattmeterresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## SetAmmeter
 
@@ -465,14 +481,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `ctx`                                                         | [context.Context](https://pkg.go.dev/context#Context)         | :heavy_check_mark:                                            | The context to use for the request.                           |
-| `vehicleID`                                                   | *string*                                                      | :heavy_check_mark:                                            | N/A                                                           |
-| `chargeAmmeter`                                               | [*shared.ChargeAmmeter](../../models/shared/chargeammeter.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |
+| `vehicleID`                                                          | *string*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
+| `chargeAmmeter`                                                      | [*shared.ChargeAmmeter](../../../pkg/models/shared/chargeammeter.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
 
 
 ### Response
 
-**[*operations.SetTeslaAmmeterResponse](../../models/operations/setteslaammeterresponse.md), error**
-
+**[*operations.SetTeslaAmmeterResponse](../../pkg/models/operations/setteslaammeterresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

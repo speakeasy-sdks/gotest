@@ -1,9 +1,0 @@
-# SuccessResponseSchemas
-
-
-## Fields
-
-| Field                                                         | Type                                                          | Required                                                      | Description                                                   | Example                                                       |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `Message`                                                     | **string*                                                     | :heavy_minus_sign:                                            | N/A                                                           |                                                               |
-| `Status`                                                      | [*shared.SchemasStatus](../../models/shared/schemasstatus.md) | :heavy_minus_sign:                                            | N/A                                                           | SUCCESS                                                       |

@@ -1,5 +1,5 @@
 # Compatibility
-(*.Compatibility*)
+(*Compatibility*)
 
 ## Overview
 
@@ -94,5 +94,7 @@ func main() {
 
 ### Response
 
-**[*operations.ListCompatibilityResponse](../../models/operations/listcompatibilityresponse.md), error**
-
+**[*operations.ListCompatibilityResponse](../../pkg/models/operations/listcompatibilityresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

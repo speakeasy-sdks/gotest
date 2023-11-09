@@ -1,5 +1,5 @@
 # Vehicles
-(*.Vehicles*)
+(*Vehicles*)
 
 ## Overview
 
@@ -71,8 +71,10 @@ func main() {
 
 ### Response
 
-**[*operations.BatchResponse](../../models/operations/batchresponse.md), error**
-
+**[*operations.BatchResponse](../../pkg/models/operations/batchresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Disconnect
 
@@ -128,8 +130,10 @@ func main() {
 
 ### Response
 
-**[*operations.DisconnectResponse](../../models/operations/disconnectresponse.md), error**
-
+**[*operations.DisconnectResponse](../../pkg/models/operations/disconnectresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Get
 
@@ -192,8 +196,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetVehicleResponse](../../models/operations/getvehicleresponse.md), error**
-
+**[*operations.GetVehicleResponse](../../pkg/models/operations/getvehicleresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetEngineOil
 
@@ -253,8 +259,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetEngineOilResponse](../../models/operations/getengineoilresponse.md), error**
-
+**[*operations.GetEngineOilResponse](../../pkg/models/operations/getengineoilresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetFuelTank
 
@@ -316,8 +324,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetFuelTankResponse](../../models/operations/getfueltankresponse.md), error**
-
+**[*operations.GetFuelTankResponse](../../pkg/models/operations/getfueltankresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetLocation
 
@@ -378,8 +388,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetLocationResponse](../../models/operations/getlocationresponse.md), error**
-
+**[*operations.GetLocationResponse](../../pkg/models/operations/getlocationresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetOdometer
 
@@ -439,8 +451,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetOdometerResponse](../../models/operations/getodometerresponse.md), error**
-
+**[*operations.GetOdometerResponse](../../pkg/models/operations/getodometerresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetPermissions
 
@@ -513,8 +527,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetPermissionsResponse](../../models/operations/getpermissionsresponse.md), error**
-
+**[*operations.GetPermissionsResponse](../../pkg/models/operations/getpermissionsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetTirePressure
 
@@ -576,8 +592,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTirePressureResponse](../../models/operations/gettirepressureresponse.md), error**
-
+**[*operations.GetTirePressureResponse](../../pkg/models/operations/gettirepressureresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetVin
 
@@ -627,8 +645,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetVinResponse](../../models/operations/getvinresponse.md), error**
-
+**[*operations.GetVinResponse](../../pkg/models/operations/getvinresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## ListVehicles
 
@@ -698,8 +718,10 @@ func main() {
 
 ### Response
 
-**[*operations.ListVehiclesResponse](../../models/operations/listvehiclesresponse.md), error**
-
+**[*operations.ListVehiclesResponse](../../pkg/models/operations/listvehiclesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## LockUnlock
 
@@ -755,14 +777,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `ctx`                                                           | [context.Context](https://pkg.go.dev/context#Context)           | :heavy_check_mark:                                              | The context to use for the request.                             |
-| `vehicleID`                                                     | *string*                                                        | :heavy_check_mark:                                              | N/A                                                             |
-| `securityAction`                                                | [*shared.SecurityAction](../../models/shared/securityaction.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `vehicleID`                                                            | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |
+| `securityAction`                                                       | [*shared.SecurityAction](../../../pkg/models/shared/securityaction.md) | :heavy_minus_sign:                                                     | N/A                                                                    |
 
 
 ### Response
 
-**[*operations.LockUnlockResponse](../../models/operations/lockunlockresponse.md), error**
-
+**[*operations.LockUnlockResponse](../../pkg/models/operations/lockunlockresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

@@ -59,15 +59,15 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.Compatibility](docs/sdks/compatibility/README.md)
+### [Compatibility](docs/sdks/compatibility/README.md)
 
 * [ListCompatibility](docs/sdks/compatibility/README.md#listcompatibility) - Compatibility
 
-### [.User](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [GetInfo](docs/sdks/user/README.md#getinfo) - User Info
 
-### [.Vehicles](docs/sdks/vehicles/README.md)
+### [Vehicles](docs/sdks/vehicles/README.md)
 
 * [Batch](docs/sdks/vehicles/README.md#batch) - Batch
 * [Disconnect](docs/sdks/vehicles/README.md#disconnect) - Revoke Access
@@ -82,7 +82,7 @@ func main() {
 * [ListVehicles](docs/sdks/vehicles/README.md#listvehicles) - All Vehicles
 * [LockUnlock](docs/sdks/vehicles/README.md#lockunlock) - Lock/Unlock Vehicle
 
-### [.Tesla](docs/sdks/tesla/README.md)
+### [Tesla](docs/sdks/tesla/README.md)
 
 * [GetAmmeter](docs/sdks/tesla/README.md#getammeter) - Retrieve charging ammeter time for a Tesla.
 * [GetChargeTime](docs/sdks/tesla/README.md#getchargetime) - Retrieve charging completion time for a Tesla.
@@ -94,7 +94,7 @@ func main() {
 * [GetWattmeter](docs/sdks/tesla/README.md#getwattmeter) - Retrieve charging wattmeter time for a Tesla.
 * [SetAmmeter](docs/sdks/tesla/README.md#setammeter) - Set charging ammeter time for a Tesla.
 
-### [.Evs](docs/sdks/evs/README.md)
+### [Evs](docs/sdks/evs/README.md)
 
 * [GetBatteryCapacity](docs/sdks/evs/README.md#getbatterycapacity) - EV Battery Capacity
 * [GetBatteryLevel](docs/sdks/evs/README.md#getbatterylevel) - EV Battery Level
@@ -103,17 +103,17 @@ func main() {
 * [SetChargingLimit](docs/sdks/evs/README.md#setcharginglimit) - Set EV Charging Limit
 * [StartStopCharge](docs/sdks/evs/README.md#startstopcharge) - Start or stop charging an electric vehicle. Please contact us to request early access.
 
-### [.Cadillac](docs/sdks/cadillac/README.md)
+### [Cadillac](docs/sdks/cadillac/README.md)
 
 * [GetChargeTime](docs/sdks/cadillac/README.md#getchargetime) - Retrieve charging completion time for a Cadillac.
 * [GetVoltage](docs/sdks/cadillac/README.md#getvoltage) - Retrieve charging voltmeter time for a Cadillac.
 
-### [.Chevrolet](docs/sdks/chevrolet/README.md)
+### [Chevrolet](docs/sdks/chevrolet/README.md)
 
 * [GetChargeTime](docs/sdks/chevrolet/README.md#getchargetime) - Retrieve charging completion time for a Chevrolet.
 * [GetVoltage](docs/sdks/chevrolet/README.md#getvoltage) - Retrieve charging voltmeter time for a Chevrolet.
 
-### [.Webhooks](docs/sdks/webhooks/README.md)
+### [Webhooks](docs/sdks/webhooks/README.md)
 
 * [Subscribe](docs/sdks/webhooks/README.md#subscribe) - Subscribe Webhook
 * [Unsubscribe](docs/sdks/webhooks/README.md#unsubscribe) - Unsubscribe Webhook
@@ -126,7 +126,49 @@ func main() {
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
+
+
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"testsdkcreation"
+	"testsdkcreation/pkg/models/shared"
+)
+
+func main() {
+	s := testsdkcreation.New(
+		testsdkcreation.WithSecurity(""),
+	)
+
+	var country *string = "{country}"
+
+	var scope *string = "{scope}"
+
+	var vin *string = "{vin}"
+
+	ctx := context.Background()
+	res, err := s.Compatibility.ListCompatibility(ctx, country, scope, vin)
+	if err != nil {
+
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+	}
+}
+
+```
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -254,12 +296,11 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |

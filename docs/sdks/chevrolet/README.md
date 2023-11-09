@@ -1,5 +1,5 @@
 # Chevrolet
-(*.Chevrolet*)
+(*Chevrolet*)
 
 ### Available Operations
 
@@ -54,8 +54,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetChevroletChargeTimeResponse](../../models/operations/getchevroletchargetimeresponse.md), error**
-
+**[*operations.GetChevroletChargeTimeResponse](../../pkg/models/operations/getchevroletchargetimeresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetVoltage
 
@@ -105,5 +107,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetChevroletVoltageResponse](../../models/operations/getchevroletvoltageresponse.md), error**
-
+**[*operations.GetChevroletVoltageResponse](../../pkg/models/operations/getchevroletvoltageresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

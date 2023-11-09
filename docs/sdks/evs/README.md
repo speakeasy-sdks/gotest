@@ -1,5 +1,5 @@
 # Evs
-(*.Evs*)
+(*Evs*)
 
 ## Overview
 
@@ -72,8 +72,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetBatteryCapacityResponse](../../models/operations/getbatterycapacityresponse.md), error**
-
+**[*operations.GetBatteryCapacityResponse](../../pkg/models/operations/getbatterycapacityresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetBatteryLevel
 
@@ -134,8 +136,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetBatteryLevelResponse](../../models/operations/getbatterylevelresponse.md), error**
-
+**[*operations.GetBatteryLevelResponse](../../pkg/models/operations/getbatterylevelresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetChargingLimit
 
@@ -185,8 +189,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetChargingLimitResponse](../../models/operations/getcharginglimitresponse.md), error**
-
+**[*operations.GetChargingLimitResponse](../../pkg/models/operations/getcharginglimitresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetChargingStatus
 
@@ -247,8 +253,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetChargingStatusResponse](../../models/operations/getchargingstatusresponse.md), error**
-
+**[*operations.GetChargingStatusResponse](../../pkg/models/operations/getchargingstatusresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## SetChargingLimit
 
@@ -294,17 +302,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `ctx`                                                     | [context.Context](https://pkg.go.dev/context#Context)     | :heavy_check_mark:                                        | The context to use for the request.                       |
-| `vehicleID`                                               | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
-| `chargeLimit`                                             | [*shared.ChargeLimit](../../models/shared/chargelimit.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `ctx`                                                            | [context.Context](https://pkg.go.dev/context#Context)            | :heavy_check_mark:                                               | The context to use for the request.                              |
+| `vehicleID`                                                      | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |
+| `chargeLimit`                                                    | [*shared.ChargeLimit](../../../pkg/models/shared/chargelimit.md) | :heavy_minus_sign:                                               | N/A                                                              |
 
 
 ### Response
 
-**[*operations.SetChargingLimitResponse](../../models/operations/setcharginglimitresponse.md), error**
-
+**[*operations.SetChargingLimitResponse](../../pkg/models/operations/setcharginglimitresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## StartStopCharge
 
@@ -361,14 +371,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ctx`                                                       | [context.Context](https://pkg.go.dev/context#Context)       | :heavy_check_mark:                                          | The context to use for the request.                         |
-| `vehicleID`                                                 | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         |
-| `chargeAction`                                              | [*shared.ChargeAction](../../models/shared/chargeaction.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
+| `vehicleID`                                                        | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                |
+| `chargeAction`                                                     | [*shared.ChargeAction](../../../pkg/models/shared/chargeaction.md) | :heavy_minus_sign:                                                 | N/A                                                                |
 
 
 ### Response
 
-**[*operations.StartStopChargeResponse](../../models/operations/startstopchargeresponse.md), error**
-
+**[*operations.StartStopChargeResponse](../../pkg/models/operations/startstopchargeresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

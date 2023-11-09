@@ -1,5 +1,5 @@
 # Cadillac
-(*.Cadillac*)
+(*Cadillac*)
 
 ### Available Operations
 
@@ -54,8 +54,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetCadillacChargeTimeResponse](../../models/operations/getcadillacchargetimeresponse.md), error**
-
+**[*operations.GetCadillacChargeTimeResponse](../../pkg/models/operations/getcadillacchargetimeresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetVoltage
 
@@ -105,5 +107,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetCadillacVoltageResponse](../../models/operations/getcadillacvoltageresponse.md), error**
-
+**[*operations.GetCadillacVoltageResponse](../../pkg/models/operations/getcadillacvoltageresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
