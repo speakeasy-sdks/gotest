@@ -18,10 +18,10 @@ When the vehicle is charging, this endpoint returns the date and time the vehicl
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -71,10 +71,10 @@ When the vehicle is plugged in, this endpoint returns the voltage of the charger
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {

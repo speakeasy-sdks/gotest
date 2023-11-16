@@ -30,10 +30,10 @@ __Description__ Returns a list of responses from multiple Smartcar endpoints, al
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -94,10 +94,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -160,10 +160,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -223,10 +223,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -288,10 +288,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -352,10 +352,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -415,10 +415,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -485,10 +485,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -556,10 +556,10 @@ __Example Response__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -609,10 +609,10 @@ Returns the vehicle’s manufacturer identifier.
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -679,10 +679,10 @@ __Response Body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -745,10 +745,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {

@@ -25,10 +25,10 @@ When the vehicle is plugged in, this endpoint returns the amperage of the charge
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -78,10 +78,10 @@ When the vehicle is charging, this endpoint returns the date and time the vehicl
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -131,10 +131,10 @@ This endpoint returns the compass heading of a Tesla. The value is in degrees, w
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -184,10 +184,10 @@ This endpoint returns the exterior temperature of a Tesla, in celsius by default
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -237,10 +237,10 @@ This endpoint returns the interior temperature of a Tesla, in celsius by default
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -290,10 +290,10 @@ This endpoint returns the speed of a Tesla (in kilometers/hour by default or in 
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -343,10 +343,10 @@ When the vehicle is plugged in, this endpoint returns the voltage of the charger
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -396,10 +396,10 @@ When the vehicle is plugged in, this endpoint returns the wattage of the charger
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -449,10 +449,10 @@ When the vehicle is plugged in, this endpoint sets the amperage of the charger m
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {

@@ -2,22 +2,24 @@ configVersion: 1.0.0
 management:
   docChecksum: 9aa415ebe1e88ff31569d0723ab1156d
   docVersion: 1.0.0
-  speakeasyVersion: 1.116.0
-  generationVersion: 2.185.0
+  speakeasyVersion: 1.120.3
+  generationVersion: 2.192.1
 generation:
   comments: {}
   sdkClassName: testsdkcreation
   repoURL: https://github.com/speakeasy-sdks/gotest.git
+  usageSnippets:
+    optionalPropertyRendering: withExample
 features:
   go:
-    core: 3.1.2
+    core: 3.1.5
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.0
     nameOverrides: 2.81.1
 go:
-  version: 0.2.1
+  version: 0.2.2
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:

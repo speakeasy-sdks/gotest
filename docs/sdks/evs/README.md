@@ -36,10 +36,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -100,10 +100,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -153,10 +153,10 @@ Returns the current charge limit of an electric vehicle.
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -217,10 +217,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -270,10 +270,10 @@ Returns the current charge limit of an electric vehicle.
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
@@ -339,10 +339,10 @@ __Response body__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {

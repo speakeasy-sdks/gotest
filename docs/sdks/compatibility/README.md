@@ -52,10 +52,10 @@ __Enum Values__
 package main
 
 import(
+	"testsdkcreation/pkg/models/shared"
+	"testsdkcreation"
 	"context"
 	"log"
-	"testsdkcreation"
-	"testsdkcreation/pkg/models/shared"
 )
 
 func main() {
