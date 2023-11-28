@@ -92,7 +92,6 @@ pkg/utils/utils.go
 /pkg/models/shared/chargeaction.go
 /pkg/models/shared/webhookinfo.go
 /pkg/models/shared/security.go
-USAGE.md
 docs/pkg/models/operations/listcompatibilityrequest.md
 docs/pkg/models/operations/listcompatibilityresponse.md
 docs/pkg/models/operations/getinforesponse.md
@@ -228,4 +227,5 @@ docs/sdks/evs/README.md
 docs/sdks/cadillac/README.md
 docs/sdks/chevrolet/README.md
 docs/sdks/webhooks/README.md
+USAGE.md
 .gitattributes
