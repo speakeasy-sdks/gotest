@@ -39,7 +39,7 @@ import (
 
 func main() {
 	s := testsdkcreation.New(
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
@@ -146,7 +146,7 @@ import (
 
 func main() {
 	s := testsdkcreation.New(
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var country *string = "{country}"
@@ -196,7 +196,7 @@ import (
 func main() {
 	s := testsdkcreation.New(
 		testsdkcreation.WithServerIndex(0),
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var country *string = "{country}"
@@ -235,7 +235,7 @@ import (
 func main() {
 	s := testsdkcreation.New(
 		testsdkcreation.WithServerURL("https://api.smartcar.com/v2.0"),
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var country *string = "{country}"
@@ -289,6 +289,8 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 <!-- Start Special Types [types] -->
 ## Special Types
+
+
 <!-- End Special Types [types] -->
 
 
@@ -316,7 +318,7 @@ import (
 
 func main() {
 	s := testsdkcreation.New(
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var country *string = "{country}"

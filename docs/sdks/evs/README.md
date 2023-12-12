@@ -44,7 +44,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -108,7 +108,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -161,7 +161,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -225,7 +225,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -278,7 +278,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -302,11 +302,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `ctx`                                                            | [context.Context](https://pkg.go.dev/context#Context)            | :heavy_check_mark:                                               | The context to use for the request.                              |
-| `vehicleID`                                                      | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |
-| `chargeLimit`                                                    | [*shared.ChargeLimit](../../../pkg/models/shared/chargelimit.md) | :heavy_minus_sign:                                               | N/A                                                              |
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `ctx`                                                         | [context.Context](https://pkg.go.dev/context#Context)         | :heavy_check_mark:                                            | The context to use for the request.                           |
+| `vehicleID`                                                   | *string*                                                      | :heavy_check_mark:                                            | N/A                                                           |
+| `chargeLimit`                                                 | [*shared.ChargeLimit](../../pkg/models/shared/chargelimit.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
 
 ### Response
@@ -347,7 +347,7 @@ import(
 
 func main() {
     s := testsdkcreation.New(
-        testsdkcreation.WithSecurity(""),
+        testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
 
@@ -371,11 +371,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
-| `vehicleID`                                                        | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                |
-| `chargeAction`                                                     | [*shared.ChargeAction](../../../pkg/models/shared/chargeaction.md) | :heavy_minus_sign:                                                 | N/A                                                                |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ctx`                                                           | [context.Context](https://pkg.go.dev/context#Context)           | :heavy_check_mark:                                              | The context to use for the request.                             |
+| `vehicleID`                                                     | *string*                                                        | :heavy_check_mark:                                              | N/A                                                             |
+| `chargeAction`                                                  | [*shared.ChargeAction](../../pkg/models/shared/chargeaction.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response

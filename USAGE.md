@@ -11,7 +11,7 @@ import (
 
 func main() {
 	s := testsdkcreation.New(
-		testsdkcreation.WithSecurity(""),
+		testsdkcreation.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	var vehicleID string = "36ab27d0-fd9d-4455-823a-ce30af709ffc"
